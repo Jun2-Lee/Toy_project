@@ -12,17 +12,21 @@ import java.util.List;
 @Entity
 public class Sharing extends Contents {
     @OneToOne
+    @JoinColumn(name="INGREDIENT_ID")
     Ingredient category;
     LocalDateTime expiry;
 
     @OneToOne
+    @JoinColumn
     Member receiver;
     LocalDateTime deadLine;
 
     @Embedded
     Address location;
     boolean isFinish;
-    @OneToMany(mappedBy = )
+
+    @OneToMany
+    @JoinColumn(name = "CONTENTS_ID")
     List<Recipes> recommendRecipes;
     String image;
     String content;

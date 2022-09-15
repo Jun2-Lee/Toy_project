@@ -5,16 +5,13 @@ import bera31.Project.domain.ingredient.Ingredient;
 import bera31.Project.domain.message.Message;
 import bera31.Project.domain.page.groupbuying.GroupBuying;
 import bera31.Project.domain.page.sharing.Sharing;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Getter
+@Getter @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
@@ -31,10 +28,23 @@ public class Member {
     @Embedded
     Address address;
     double manner;
+
+    @OneToMany(mappedBy = "user")
     List<Sharing> sharingList;
+
+    @OneToMany
+    @JoinColumn(name = "CONTENTS_ID")
     List<Sharing> favoriteSharing;
+
+    @OneToMany(mappedBy = "user")
     List<GroupBuying> buyingList;
+
+    @OneToMany
+    @JoinColumn(name = "CONTENTS_ID")
     List<GroupBuying> favoriteBuying;
+
+    @OneToMany
+    @JoinColumn(name ="INGREDIENTS_ID")
     List<Ingredient> favoriteFood;
 
     @OneToMany

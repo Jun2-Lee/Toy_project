@@ -4,10 +4,7 @@ import bera31.Project.domain.ingredient.Meat;
 import bera31.Project.domain.member.Member;
 import bera31.Project.domain.page.Contents;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -17,6 +14,9 @@ public class DutchPay extends Contents {
     String store;
     int deliveryCost;
     int limitMember;
+
+    @OneToMany
+    @JoinColumn(name = "MEMBER_ID")
     List<Member> memberList;
     double x;
     double y;

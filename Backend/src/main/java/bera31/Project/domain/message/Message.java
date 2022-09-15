@@ -1,11 +1,14 @@
 package bera31.Project.domain.message;
 
 import bera31.Project.domain.member.Member;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
+@Getter @Setter
 public class Message {
     @Id @GeneratedValue
     @Column(name = "MESSAGE_ID")
@@ -13,11 +16,11 @@ public class Message {
     LocalDateTime sendTime;
 
     @ManyToOne
-    @JoinColumn(name = "MEMBER_ID")
+    @JoinColumn
     Member sender;
 
     @ManyToOne
-    @JoinColumn(name = "MEMBER_ID")
+    @JoinColumn
     Member receiver;
     String content;
 }

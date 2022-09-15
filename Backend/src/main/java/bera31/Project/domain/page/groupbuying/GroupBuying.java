@@ -4,10 +4,7 @@ import bera31.Project.domain.ingredient.Ingredient;
 import bera31.Project.domain.member.Member;
 import bera31.Project.domain.page.Contents;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -16,12 +13,18 @@ public class GroupBuying extends Contents {
     String title;
     String productName;
     String link;
+
+    @OneToOne
+    @JoinColumn(name = "INGREDIENT_ID")
     Ingredient category;
     LocalDateTime deadLine;
     String content;
     int cost;
     String image;
     int limitMember;
+
+    @OneToMany
+    @JoinColumn(name = "MEMBER_ID")
     List<Member> memberList;
     boolean isFinish;
 }

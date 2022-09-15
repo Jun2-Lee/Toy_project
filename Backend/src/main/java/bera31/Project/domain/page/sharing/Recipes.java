@@ -10,7 +10,10 @@ public class Recipes {
     @Id @GeneratedValue
     @Column(name = "RECIPES_ID")
     Long id;
-    List<Sharing> sharingList;
+
     String title;
+
+    @OneToMany
+    @JoinColumn(name = "INGREDIENT_ID")
     List<Ingredient> mainIngredient;
 }
