@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -25,7 +26,7 @@ public class Comment {
     Comment parent;
 
     @OneToMany(mappedBy = "parent")
-    List<Comment> children;
+    List<Comment> children = new ArrayList<>();
 
     @ManyToOne
     @JoinColumn(name = "CONTENTS_ID")

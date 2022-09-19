@@ -21,12 +21,16 @@ public class Sharing extends Contents {
     Member receiver;
     LocalDateTime deadLine;
 
+    @ManyToOne
+    @JoinColumn(name = "MEMBER_ID")
+    Member user;
+
     @Embedded
     Address location;
     boolean isFinish;
 
     @OneToMany
-    @JoinColumn(name = "CONTENTS_ID")
+    @JoinColumn(name = "RECIPES_ID")
     List<Recipes> recommendRecipes;
     String image;
     String content;

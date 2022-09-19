@@ -3,12 +3,16 @@ package bera31.Project.domain.page.groupbuying;
 import bera31.Project.domain.ingredient.Ingredient;
 import bera31.Project.domain.member.Member;
 import bera31.Project.domain.page.Contents;
+import bera31.Project.domain.page.intersection.GroupBuyingIntersection;
+import lombok.Data;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@Data
 public class GroupBuying extends Contents {
     String title;
     String productName;
@@ -23,8 +27,11 @@ public class GroupBuying extends Contents {
     String image;
     int limitMember;
 
-    @OneToMany
+    @ManyToOne
     @JoinColumn(name = "MEMBER_ID")
-    List<Member> memberList;
+    Member user;
+
+    @OneToMany(mappedBy = "groupBuying")
+    List<GroupBuyingIntersection> memberList = new ArrayList<>();
     boolean isFinish;
 }

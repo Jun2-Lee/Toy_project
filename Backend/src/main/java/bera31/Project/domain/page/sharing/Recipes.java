@@ -3,6 +3,7 @@ package bera31.Project.domain.page.sharing;
 import bera31.Project.domain.ingredient.Ingredient;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -14,6 +15,6 @@ public class Recipes {
     String title;
 
     @OneToMany
-    @JoinColumn(name = "INGREDIENT_ID")
-    List<Ingredient> mainIngredient;
+    @JoinColumn(name = "RECIPES_ID")
+    List<Ingredient> mainIngredient = new ArrayList<>();
 }

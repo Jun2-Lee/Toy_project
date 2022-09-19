@@ -16,11 +16,11 @@ public class Message {
     LocalDateTime sendTime;
 
     @ManyToOne
-    @JoinColumn
+    @JoinColumn(name = "SENDER_MEMBER_ID")
     Member sender;
 
     @ManyToOne
-    @JoinColumn
+    @JoinColumn(name = "RECEIVER_MEMBER_ID")
     Member receiver;
     String content;
 }
