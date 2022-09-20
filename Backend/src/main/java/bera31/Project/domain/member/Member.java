@@ -2,6 +2,7 @@ package bera31.Project.domain.member;
 
 import bera31.Project.domain.Address;
 import bera31.Project.domain.ingredient.Ingredient;
+import bera31.Project.domain.memo.Memo;
 import bera31.Project.domain.message.Message;
 import bera31.Project.domain.page.dutchpay.DutchPay;
 import bera31.Project.domain.page.groupbuying.GroupBuying;
@@ -11,7 +12,6 @@ import bera31.Project.domain.page.sharing.Sharing;
 import lombok.*;
 
 import javax.persistence.*;
-import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,15 +40,14 @@ public class Member {
     @OneToMany(mappedBy = "user")
     List<GroupBuying> buyingList = new ArrayList<>();
 
-
     @OneToMany(mappedBy = "user")
     List<DutchPay> dutchPayList = new ArrayList<>();
 
     @OneToMany(mappedBy = "participant")
-    List<GroupBuyingIntersection> hello = new ArrayList<>();
+    List<GroupBuyingIntersection> gbi = new ArrayList<>();
 
     @OneToMany(mappedBy = "participant")
-    List<DutchPayIntersection> hello2 = new ArrayList<>();
+    List<DutchPayIntersection> dpi = new ArrayList<>();
 
     @OneToMany
     @JoinColumn(name = "MEMBER_ID")
@@ -67,4 +66,8 @@ public class Member {
 
     @OneToMany(mappedBy = "sender")
     List<Message> sendMessage = new ArrayList<>();
+
+    @OneToMany
+    @JoinColumn(name = "MEMBER_ID")
+    List<Memo> memoList = new ArrayList<>();
 }

@@ -15,7 +15,7 @@ public class GroupBuyingIntersection {
     Long id;
 
     @ManyToOne
-    @JoinColumn(name = "MEMBER_ID")
+    @JoinColumn(name = "PARTICIPANT_ID")
     Member participant;
 
     @ManyToOne

@@ -17,12 +17,8 @@ public class DutchPay extends Contents {
     int deliveryCost;
     int limitMember;
 
-    /*@OneToMany(mappedBy = "dutchPay")
-    List<DutchPayIntersection> memberList = new ArrayList<>();*/
-
-    @ManyToOne
-    @JoinColumn(name = "MEMBER_ID")
-    Member user;
+    @OneToMany(mappedBy = "dutchPay")
+    List<DutchPayIntersection> memberList = new ArrayList<>();
 
     double x;
     double y;

@@ -27,10 +27,6 @@ public class GroupBuying extends Contents {
     String image;
     int limitMember;
 
-    @ManyToOne
-    @JoinColumn(name = "MEMBER_ID")
-    Member user;
-
     @OneToMany(mappedBy = "groupBuying")
     List<GroupBuyingIntersection> memberList = new ArrayList<>();
     boolean isFinish;

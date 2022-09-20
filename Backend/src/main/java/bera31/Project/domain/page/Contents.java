@@ -13,11 +13,15 @@ import java.util.List;
 @Entity
 @Data
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-public class Contents {
+public abstract class Contents {
     @Id @GeneratedValue
     @Column(name = "CONTENTS_ID")
     Long id;
     String title;
+
+    @ManyToOne
+    @JoinColumn(name = "MEMBER_ID")
+    Member user;
 
     @OneToMany(mappedBy = "contents")
     List<Comment> comments = new ArrayList<>();

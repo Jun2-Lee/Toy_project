@@ -2,17 +2,18 @@ package bera31.Project.domain.page.intersection;
 
 import bera31.Project.domain.member.Member;
 import bera31.Project.domain.page.dutchpay.DutchPay;
+import lombok.Data;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
-public class DutchPayIntersection {
+@Data
+public class DutchPayIntersection  {
     @Id @GeneratedValue
     Long id;
 
     @ManyToOne
-    @JoinColumn(name = "MEMBER_ID")
+    @JoinColumn(name = "PARTICIPANT_ID")
     Member participant;
 
     @ManyToOne

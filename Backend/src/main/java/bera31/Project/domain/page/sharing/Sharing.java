@@ -21,10 +21,6 @@ public class Sharing extends Contents {
     Member receiver;
     LocalDateTime deadLine;
 
-    @ManyToOne
-    @JoinColumn(name = "MEMBER_ID")
-    Member user;
-
     @Embedded
     Address location;
     boolean isFinish;
