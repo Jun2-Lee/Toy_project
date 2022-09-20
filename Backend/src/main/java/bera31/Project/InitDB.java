@@ -13,6 +13,7 @@ import bera31.Project.domain.page.intersection.GroupBuyingIntersection;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.GetMapping;
 
 import javax.annotation.PostConstruct;
 import javax.persistence.EntityManager;
