@@ -70,4 +70,20 @@ public class Member {
     @OneToMany
     @JoinColumn(name = "MEMBER_ID")
     List<Memo> memoList = new ArrayList<>();
+
+    public void changePassword(String password){
+        this.password = password;
+    }
+
+    public void changeAddress(Address address){
+        this.address = address;
+    }
+
+    public void deleteFood(Ingredient food){
+        this.favoriteFood.remove(food);
+    }
+
+    public void addFood(Ingredient food){
+        this.favoriteFood.add(food);
+    }
 }
