@@ -1,5 +1,6 @@
 package bera31.Project;
 
+import bera31.Project.domain.dto.ScheduleDto;
 import bera31.Project.domain.ingredient.Ingredient;
 import bera31.Project.domain.ingredient.Meal;
 import bera31.Project.domain.member.Member;
@@ -10,6 +11,7 @@ import bera31.Project.domain.page.dutchpay.DutchPay;
 import bera31.Project.domain.page.groupbuying.GroupBuying;
 import bera31.Project.domain.page.intersection.DutchPayIntersection;
 import bera31.Project.domain.page.intersection.GroupBuyingIntersection;
+import bera31.Project.service.MemoService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
@@ -17,6 +19,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import javax.annotation.PostConstruct;
 import javax.persistence.EntityManager;
+import java.time.LocalDateTime;
 
 @Component
 @RequiredArgsConstructor
@@ -35,10 +38,9 @@ public class InitDB {
     static class InitService {
 
         private final EntityManager em;
+        private final MemoService memoService;
 
         public void dbInit1() {
-            GroupBuying groupBuying = new GroupBuying();
-            groupBuying.setTitle("무야호");
 
             Member member1 = new Member();
             member1.setNickname("이설희");
@@ -48,30 +50,22 @@ public class InitDB {
             message.setSender(member1);
             message.setReceiver(member2);
 
-            Ingredient ingredient = new Ingredient();
-            groupBuying.setUser(member1);
-            member1.getBuyingList().add(groupBuying);
-            groupBuying.setCategory(ingredient);
-
             Memo memo = new Memo();
             memo.setCategory(MemoCategory.DutchPay);
             memo.setTitle("치킨 N빵");
-            member1.getMemoList().add(memo);
+            member1.addMemo(memo);
 
-            GroupBuyingIntersection groupBuyingIntersection = new GroupBuyingIntersection();
-
-            groupBuyingIntersection.setGroupBuying(groupBuying);
-            groupBuyingIntersection.setParticipant(member2);
-            member2.getGbi().add(groupBuyingIntersection);
-            groupBuying.getMemberList().add(groupBuyingIntersection);
-
-            em.persist(groupBuying);
-            em.persist(memo);
             em.persist(member1);
             em.persist(member2);
-            em.persist(message);
-            em.persist(groupBuyingIntersection);
-            em.persist(ingredient);
+            em.persist(memo);
+
+            em.flush();
+            em.clear();
+
+            ScheduleDto scheduleDto = new ScheduleDto(MemoCategory.Sharing, "나눔", LocalDateTime.now(), "여기", "ㅁㄴㅇㄹ");
+
+            memoService.updateSchedule(memo.getId(),scheduleDto);
+
         }
     }
 }

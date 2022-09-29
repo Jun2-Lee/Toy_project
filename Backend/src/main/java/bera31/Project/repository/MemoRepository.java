@@ -23,15 +23,12 @@ public class MemoRepository {
         return;
     }
 
-    public List<Memo> findAll(){
-        return em.createQuery("select m from Memo m", Memo.class)
-                .getResultList();
-    }
-
     public Memo findById(Long id) {
         return em.createQuery("select m from Memo m where m.id =:id", Memo.class)
                 .setParameter("id", id)
                 .getSingleResult();
     }
+
+
 
 }

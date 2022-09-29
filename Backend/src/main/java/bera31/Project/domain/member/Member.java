@@ -86,4 +86,8 @@ public class Member {
     public void addFood(Ingredient food){
         this.favoriteFood.add(food);
     }
+
+    public void addMemo(Memo memo){
+        this.memoList.add(memo);
+    }
 }
