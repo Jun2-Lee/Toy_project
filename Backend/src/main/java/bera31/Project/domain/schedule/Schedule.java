@@ -1,4 +1,4 @@
-package bera31.Project.domain.memo;
+package bera31.Project.domain.schedule;
 
 import bera31.Project.domain.dto.ScheduleDto;
 import lombok.AllArgsConstructor;
@@ -14,18 +14,18 @@ import java.time.LocalDateTime;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Memo {
+public class Schedule {
     @Id @GeneratedValue
     long id;
 
     @Enumerated(EnumType.STRING)
-    MemoCategory category;
+    ScheduleCategory category;
     String title;
     LocalDateTime time;
     String place;
     String content;
 
-    public void updateMemo(ScheduleDto memo) {
+    public void updateSchedule(ScheduleDto memo) {
         this.title = memo.getTitle();
         this.category = memo.getCategory();
         this.time = memo.getTime();

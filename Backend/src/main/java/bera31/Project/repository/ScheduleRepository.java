@@ -1,30 +1,29 @@
 package bera31.Project.repository;
 
-import bera31.Project.domain.memo.Memo;
+import bera31.Project.domain.schedule.Schedule;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
-import java.util.List;
 
 @Repository
 @RequiredArgsConstructor
-public class MemoRepository {
+public class ScheduleRepository {
 
     private final EntityManager em;
 
-    public Memo save(Memo memo){
+    public Schedule save(Schedule memo){
         em.persist(memo);
         return memo;
     }
 
-    public void delete(Memo memo){
+    public void delete(Schedule memo){
         em.remove(memo);
         return;
     }
 
-    public Memo findById(Long id) {
-        return em.createQuery("select m from Memo m where m.id =:id", Memo.class)
+    public Schedule findById(Long id) {
+        return em.createQuery("select m from Schedule m where m.id =:id", Schedule.class)
                 .setParameter("id", id)
                 .getSingleResult();
     }

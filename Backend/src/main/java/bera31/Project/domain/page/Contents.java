@@ -17,6 +17,7 @@ public abstract class Contents {
     @Id @GeneratedValue
     @Column(name = "CONTENTS_ID")
     Long id;
+
     String title;
 
     @ManyToOne
@@ -25,5 +26,6 @@ public abstract class Contents {
 
     @OneToMany(mappedBy = "contents")
     List<Comment> comments = new ArrayList<>();
+
     LocalDateTime postTime;
 }
