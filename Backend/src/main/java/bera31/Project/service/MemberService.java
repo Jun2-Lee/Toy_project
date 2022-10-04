@@ -19,8 +19,6 @@ public class MemberService {
     private final MemberRepository memberRepository;
     private final IngredientRepository ingredientRepository;
 
-
-
     public void changePassword(@RequestBody String password){
         //멤버 찾기(로그인 구현 후에 할 예정)
         //member.changePassword(password);

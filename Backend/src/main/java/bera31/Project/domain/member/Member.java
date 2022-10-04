@@ -90,4 +90,8 @@ public class Member {
     public void addMemo(Memo memo){
         this.memoList.add(memo);
     }
+
+    public void addSharing(Sharing sharing){
+        this.sharingList.add(sharing);
+    }
 }
