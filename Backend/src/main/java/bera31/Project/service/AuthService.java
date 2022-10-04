@@ -21,10 +21,16 @@ public class AuthService {
         if(memberRepository.findByEmail(signUpDto.getEmail()).isPresent()){
             throw new Exception("이미 있는 회원입니다");
         }
+
+        if(memberRepository.findByNickName(signUpDto.getNickname()).isPresent()){
+            throw new Exception("이미 있는 닉네임입니다");
+        }
+
         Member member = signUpDto.toMember();
         memberRepository.save(member);
         return;
     }
+
 
 
 
