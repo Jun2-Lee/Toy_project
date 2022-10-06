@@ -1,21 +1,20 @@
 package bera31.Project;
 
 import bera31.Project.domain.dto.ScheduleDto;
+import bera31.Project.domain.dto.page.SharingDto;
+import bera31.Project.domain.dto.page.SharingUpdateDto;
 import bera31.Project.domain.ingredient.Ingredient;
-import bera31.Project.domain.ingredient.Meal;
+import bera31.Project.domain.ingredient.Meat;
 import bera31.Project.domain.member.Member;
 import bera31.Project.domain.memo.Memo;
 import bera31.Project.domain.memo.MemoCategory;
 import bera31.Project.domain.message.Message;
-import bera31.Project.domain.page.dutchpay.DutchPay;
-import bera31.Project.domain.page.groupbuying.GroupBuying;
-import bera31.Project.domain.page.intersection.DutchPayIntersection;
-import bera31.Project.domain.page.intersection.GroupBuyingIntersection;
+import bera31.Project.domain.page.sharing.Sharing;
 import bera31.Project.service.MemoService;
+import bera31.Project.service.page.SharingService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.GetMapping;
 
 import javax.annotation.PostConstruct;
 import javax.persistence.EntityManager;
@@ -39,6 +38,7 @@ public class InitDB {
 
         private final EntityManager em;
         private final MemoService memoService;
+        private final SharingService sharingService;
 
         public void dbInit1() {
 
@@ -55,9 +55,21 @@ public class InitDB {
             memo.setTitle("치킨 N빵");
             member1.addMemo(memo);
 
+            Ingredient ingredient = new Ingredient();
+            ingredient.setMeat(Meat.소고기);
+
+            Sharing sharing = new Sharing();
+            sharing.setTitle("재료 나눔함");
+            sharing.setCategory(ingredient);
+            sharing.setContent("채소 나눔해요");
+            member1.addSharing(sharing);
+
+            em.persist(ingredient);
             em.persist(member1);
             em.persist(member2);
             em.persist(memo);
+            em.persist(sharing);
+
 
             em.flush();
             em.clear();
@@ -65,6 +77,11 @@ public class InitDB {
             ScheduleDto scheduleDto = new ScheduleDto(MemoCategory.Sharing, "나눔", LocalDateTime.now(), "여기", "ㅁㄴㅇㄹ");
 
             memoService.updateSchedule(memo.getId(),scheduleDto);
+
+            SharingUpdateDto sharingUpdateDto = new SharingUpdateDto("아직 나눔 중", "나눔중", ingredient, LocalDateTime.now(), LocalDateTime.now(),"");
+            sharingService.updateSharing(sharing.getId(), sharingUpdateDto);
+
+
 
         }
     }

@@ -1,6 +1,7 @@
 package bera31.Project.domain.page.sharing;
 
 import bera31.Project.domain.Address;
+import bera31.Project.domain.dto.page.SharingUpdateDto;
 import bera31.Project.domain.ingredient.Ingredient;
 import bera31.Project.domain.member.Member;
 import bera31.Project.domain.page.Contents;
@@ -40,4 +41,14 @@ public class Sharing extends Contents {
 
     String image;
     String content;
+
+
+    public void updateSharing(SharingUpdateDto sharing){
+        this.title = sharing.getTitle();
+        this.content = sharing.getContent();
+        this.category = sharing.getCategory();
+        this.expiry = sharing.getExpiry();
+        this.deadLine = sharing.getDeadLine();
+        this.image = sharing.getImage();
+    }
 }

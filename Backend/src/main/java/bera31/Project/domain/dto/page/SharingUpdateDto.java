@@ -1,6 +1,5 @@
 package bera31.Project.domain.dto.page;
 
-import bera31.Project.domain.Address;
 import bera31.Project.domain.ingredient.Ingredient;
 import bera31.Project.domain.page.sharing.Sharing;
 import lombok.AllArgsConstructor;
@@ -13,27 +12,23 @@ import java.time.LocalDateTime;
 @Getter
 @SuperBuilder
 @AllArgsConstructor
-public class SharingDto {
+public class SharingUpdateDto {
     String title;
     String content;
     Ingredient category;
     LocalDateTime expiry;
     LocalDateTime deadLine;
-    LocalDateTime postTime;
-    Address location;
     String image;
 
     @Builder
-    public Sharing toSharing(){
+    public Sharing updateSharing(){
         return Sharing.builder()
                 .title(title)
+                .content(content)
                 .category(category)
                 .expiry(expiry)
                 .deadLine(deadLine)
-                .postTime(postTime)
-                .location(location)
-                .content(content)
-                .image(image)
-                .isFinish(false).build();
+                .image(image).build();
     }
+
 }
