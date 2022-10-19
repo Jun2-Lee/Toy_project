@@ -1,6 +1,6 @@
 package bera31.Project.service;
 
-import bera31.Project.domain.dto.SignUpDto;
+import bera31.Project.domain.dto.requestdto.SignUpDto;
 import bera31.Project.domain.member.Member;
 import bera31.Project.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
