@@ -1,17 +1,12 @@
 package bera31.Project;
 
 import bera31.Project.domain.dto.ScheduleDto;
-import bera31.Project.domain.dto.page.SharingDto;
-import bera31.Project.domain.dto.page.SharingUpdateDto;
-import bera31.Project.domain.ingredient.Ingredient;
-import bera31.Project.domain.ingredient.Meat;
 import bera31.Project.domain.member.Member;
-import bera31.Project.domain.memo.Memo;
-import bera31.Project.domain.memo.MemoCategory;
-import bera31.Project.domain.message.Message;
 import bera31.Project.domain.page.sharing.Sharing;
-import bera31.Project.service.MemoService;
-import bera31.Project.service.page.SharingService;
+import bera31.Project.domain.schedule.Schedule;
+import bera31.Project.domain.schedule.ScheduleCategory;
+import bera31.Project.domain.message.Message;
+import bera31.Project.service.ScheduleService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
@@ -37,8 +32,8 @@ public class InitDB {
     static class InitService {
 
         private final EntityManager em;
-        private final MemoService memoService;
-        private final SharingService sharingService;
+        private final ScheduleService memoService;
+
 
         public void dbInit1() {
 
@@ -49,9 +44,11 @@ public class InitDB {
             Message message = new Message();
             message.setSender(member1);
             message.setReceiver(member2);
+            Sharing sharing = new Sharing();
+            em.persist(sharing);
 
-            Memo memo = new Memo();
-            memo.setCategory(MemoCategory.DutchPay);
+            Schedule memo = new Schedule();
+            memo.setCategory(ScheduleCategory.DutchPay);
             memo.setTitle("치킨 N빵");
             member1.addMemo(memo);
 
@@ -74,9 +71,9 @@ public class InitDB {
             em.flush();
             em.clear();
 
-            ScheduleDto scheduleDto = new ScheduleDto(MemoCategory.Sharing, "나눔", LocalDateTime.now(), "여기", "ㅁㄴㅇㄹ");
+            ScheduleDto scheduleDto = new ScheduleDto(memo.getId(), ScheduleCategory.Sharing, "나눔", LocalDateTime.now(), "여기", "ㅁㄴㅇㄹ");
 
-            memoService.updateSchedule(memo.getId(),scheduleDto);
+
 
             SharingUpdateDto sharingUpdateDto = new SharingUpdateDto("아직 나눔 중", "나눔중", ingredient, LocalDateTime.now(), LocalDateTime.now(),"");
             sharingService.updateSharing(sharing.getId(), sharingUpdateDto);

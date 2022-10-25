@@ -1,6 +1,5 @@
 package bera31.Project.repository;
 
-import bera31.Project.domain.memo.Memo;
 import bera31.Project.domain.message.Message;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
@@ -28,7 +27,7 @@ public class MessageRepository {
                 .getResultList();
     }
 
-    public Message findById(Long id) {
+    public Message findByMemberId(Long id) {
         return em.createQuery("select m from Message m where m.id =:id", Message.class)
                 .setParameter("id", id)
                 .getSingleResult();

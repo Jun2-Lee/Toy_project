@@ -2,7 +2,7 @@ package bera31.Project.domain.member;
 
 import bera31.Project.domain.Address;
 import bera31.Project.domain.ingredient.Ingredient;
-import bera31.Project.domain.memo.Memo;
+import bera31.Project.domain.schedule.Schedule;
 import bera31.Project.domain.message.Message;
 import bera31.Project.domain.page.dutchpay.DutchPay;
 import bera31.Project.domain.page.groupbuying.GroupBuying;
@@ -13,7 +13,9 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Getter @Setter
@@ -61,6 +63,9 @@ public class Member {
     @JoinColumn(name = "MEMBER_ID")
     List<Ingredient> favoriteFood = new ArrayList<>();
 
+    @Transient
+    List<Long> chattedMember = new ArrayList<>();
+
     @OneToMany(mappedBy = "receiver")
     List<Message> receivedMessage = new ArrayList<>();
 
@@ -69,7 +74,7 @@ public class Member {
 
     @OneToMany
     @JoinColumn(name = "MEMBER_ID")
-    List<Memo> memoList = new ArrayList<>();
+    List<Schedule> memoList = new ArrayList<>();
 
     public void changePassword(String password){
         this.password = password;
@@ -79,16 +84,12 @@ public class Member {
         this.address = address;
     }
 
-    public void deleteFood(Ingredient food){
-        this.favoriteFood.remove(food);
-    }
+    public void changeFood(List<Ingredient> ingredients){this.favoriteFood = ingredients;}
 
-    public void addFood(Ingredient food){
-        this.favoriteFood.add(food);
-    }
+    public void changeImage(String image){this.profileImage = image;}
 
-    public void addMemo(Memo memo){
-        this.memoList.add(memo);
+    public void addMemo(Schedule schedule){
+        this.memoList.add(schedule);
     }
 
     public void addSharing(Sharing sharing){

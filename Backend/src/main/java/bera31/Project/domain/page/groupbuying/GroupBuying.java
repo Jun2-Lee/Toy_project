@@ -14,7 +14,6 @@ import java.util.List;
 @Entity
 @Data
 public class GroupBuying extends Contents {
-    String title;
     String productName;
     String link;
 

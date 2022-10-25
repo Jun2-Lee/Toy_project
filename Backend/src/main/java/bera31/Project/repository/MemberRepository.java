@@ -43,9 +43,11 @@ public class MemberRepository {
         return memberList.stream().findAny();
     }
 
-    public Member findByNickName(String nickName){
-        return em.createQuery("select m from Member m where m.nickname =:nickName", Member.class)
+    public Optional<Member> findByNickName(String nickName){
+        List<Member> memberList = em.createQuery("select m from Member m where m.nickname =:nickName", Member.class)
                 .setParameter("nickName", nickName)
-                .getSingleResult();
+                .getResultList();
+
+        return memberList.stream().findAny();
     }
 }

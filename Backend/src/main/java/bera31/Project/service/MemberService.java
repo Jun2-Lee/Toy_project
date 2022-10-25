@@ -2,15 +2,12 @@ package bera31.Project.service;
 
 import bera31.Project.domain.Address;
 import bera31.Project.domain.ingredient.Ingredient;
-import bera31.Project.domain.member.Member;
-import bera31.Project.domain.memo.Memo;
 import bera31.Project.repository.IngredientRepository;
 import bera31.Project.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestBody;
-import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -24,21 +21,11 @@ public class MemberService {
         //member.changePassword(password);
     }
 
-    public void changeAddress(@RequestBody Address address){
+    public void changeMyInfo(@RequestBody Address address){
         //멤버 찾기(로그인 구현 후에 할 예정)
         //member.changeAddress(address);
-    }
-
-    public void deleteFood(@RequestBody Long foodId){
-        //멤버 찾기(로그인 구현 후에 할 예정)
-        Ingredient findFood = ingredientRepository.findById(foodId);
-        //member.deleteFood(findFood);
-    }
-
-    public void addFood(@RequestBody Long foodId){
-        //멤버 찾기(로그인 구현 후에 할 예정)
-        Ingredient findFood = ingredientRepository.findById(foodId);
-        //member.addFood(findFood);
+        //member.changeFood(List<Ingredient> ingredient);
+        //member.changeImage(String image);
     }
 
     @Transactional(readOnly = true)
@@ -50,5 +37,12 @@ public class MemberService {
     public void deleteMember(){
         //멤버 찾기(로그인 구현 후에 할 예정)
         //memberRepository.delete(member);
+    }
+
+    public String findPassword(@RequestBody String email) throws Exception{
+        if(memberRepository.findByEmail(email).isPresent())
+            return memberRepository.findByEmail(email).get().getPassword();
+        else
+            throw new Exception("없는 이메일 입니다.");
     }
 }
