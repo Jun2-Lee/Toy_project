@@ -23,4 +23,8 @@ public class Message {
     @JoinColumn(name = "RECEIVER_MEMBER_ID")
     Member receiver;
     String content;
+
+    @ManyToOne
+    @JoinColumn(name = "ROOM_ID")
+    Room room;
 }

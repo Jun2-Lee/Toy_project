@@ -1,6 +1,6 @@
 package bera31.Project.domain.schedule;
 
-import bera31.Project.domain.dto.ScheduleDto;
+import bera31.Project.domain.dto.requestdto.ScheduleDto;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

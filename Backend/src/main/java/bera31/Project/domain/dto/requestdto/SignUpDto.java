@@ -1,4 +1,4 @@
-package bera31.Project.domain.dto;
+package bera31.Project.domain.dto.requestdto;
 
 import bera31.Project.domain.Address;
 import bera31.Project.domain.member.Member;

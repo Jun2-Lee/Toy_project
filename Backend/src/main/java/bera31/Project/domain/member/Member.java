@@ -2,6 +2,7 @@ package bera31.Project.domain.member;
 
 import bera31.Project.domain.Address;
 import bera31.Project.domain.ingredient.Ingredient;
+import bera31.Project.domain.message.Room;
 import bera31.Project.domain.schedule.Schedule;
 import bera31.Project.domain.message.Message;
 import bera31.Project.domain.page.dutchpay.DutchPay;
@@ -63,14 +64,8 @@ public class Member {
     @JoinColumn(name = "MEMBER_ID")
     List<Ingredient> favoriteFood = new ArrayList<>();
 
-    @Transient
-    List<Long> chattedMember = new ArrayList<>();
-
-    @OneToMany(mappedBy = "receiver")
-    List<Message> receivedMessage = new ArrayList<>();
-
-    @OneToMany(mappedBy = "sender")
-    List<Message> sendMessage = new ArrayList<>();
+    @OneToMany(mappedBy = "member1")
+    List<Room> roomList = new ArrayList<>();
 
     @OneToMany
     @JoinColumn(name = "MEMBER_ID")
