@@ -1,6 +1,7 @@
 package bera31.Project.repository.page;
 
 import bera31.Project.domain.page.dutchpay.DutchPay;
+import bera31.Project.domain.page.groupbuying.GroupBuying;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
@@ -12,9 +13,9 @@ import java.util.List;
 public class DutchPayRepository {
     private final EntityManager em;
 
-    public DutchPay save(DutchPay dutchPay){
+    public Long save(DutchPay dutchPay){
         em.persist(dutchPay);
-        return dutchPay;
+        return dutchPay.getId();
     }
 
     public void delete(DutchPay dutchPay){
@@ -31,5 +32,11 @@ public class DutchPayRepository {
         return em.createQuery("select d from DutchPay d where d.id =:id", DutchPay.class)
                 .setParameter("id", id)
                 .getSingleResult();
+    }
+
+    public List<DutchPay> findByKeword(String keyword){
+        return em.createQuery("select d from DutchPay d where d.title LIKE :keyword", DutchPay.class)
+                .setParameter("keyword", "%" + keyword + "%")
+                .getResultList();
     }
 }

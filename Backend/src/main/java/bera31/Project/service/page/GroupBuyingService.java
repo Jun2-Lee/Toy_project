@@ -18,6 +18,13 @@ import java.util.stream.Collectors;
 public class GroupBuyingService {
     private final GroupBuyingRepository groupBuyingRepository;
 
+    public List<GroupBuyingListResponseDto> searchGroupBuying(String keyword){
+        return groupBuyingRepository.findByKeword(keyword)
+                .stream()
+                .map(GroupBuyingListResponseDto::new)
+                .collect(Collectors.toList());
+    }
+
     public List<GroupBuyingListResponseDto> findAllGroupBuying(){
         return groupBuyingRepository.findAll()
                 .stream()

@@ -35,4 +35,11 @@ public class GroupBuyingRepository {
                 .setParameter("id", id)
                 .getSingleResult();
     }
+
+    public List<GroupBuying> findByKeword(String keyword){
+        return em.createQuery("select g from GroupBuying g where g.title LIKE :keyword", GroupBuying.class)
+                .setParameter("keyword", "%" + keyword + "%")
+                .getResultList();
+    }
+
 }

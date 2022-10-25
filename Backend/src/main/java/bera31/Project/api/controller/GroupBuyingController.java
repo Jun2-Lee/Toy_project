@@ -6,14 +6,11 @@ import bera31.Project.domain.dto.responsedto.GroupBuyingResponseDto;
 import bera31.Project.service.page.GroupBuyingService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Controller
+@RestController
 @RequiredArgsConstructor
 public class GroupBuyingController {
 
@@ -32,5 +29,10 @@ public class GroupBuyingController {
     @GetMapping("/api/groupBuying/{postId}")
     public GroupBuyingResponseDto findGroupBuying(@PathVariable Long postId){
         return new GroupBuyingResponseDto();
+    }
+
+    @PostMapping("/api/groupBuying/{keyword}")
+    public List<GroupBuyingListResponseDto> searchGroupBuying(@PathVariable String keyword){
+        return groupBuyingService.searchGroupBuying(keyword);
     }
 }
