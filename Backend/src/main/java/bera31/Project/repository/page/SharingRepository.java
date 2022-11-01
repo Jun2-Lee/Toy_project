@@ -1,5 +1,6 @@
 package bera31.Project.repository.page;
 
+import bera31.Project.domain.page.groupbuying.GroupBuying;
 import bera31.Project.domain.page.sharing.Sharing;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;

@@ -28,6 +28,7 @@ public class Sharing extends Contents {
     @OneToOne
     @JoinColumn
     Member receiver;
+
     LocalDateTime deadLine;
 
     @Embedded

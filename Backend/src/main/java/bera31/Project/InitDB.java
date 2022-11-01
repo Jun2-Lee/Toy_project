@@ -1,7 +1,8 @@
 package bera31.Project;
 
-import bera31.Project.domain.dto.ScheduleDto;
+import bera31.Project.domain.dto.requestdto.ScheduleDto;
 import bera31.Project.domain.member.Member;
+import bera31.Project.domain.page.dutchpay.DutchPay;
 import bera31.Project.domain.page.sharing.Sharing;
 import bera31.Project.domain.schedule.Schedule;
 import bera31.Project.domain.schedule.ScheduleCategory;
@@ -45,6 +46,8 @@ public class InitDB {
             message.setSender(member1);
             message.setReceiver(member2);
             Sharing sharing = new Sharing();
+            DutchPay dutchPay = new DutchPay();
+            em.persist(dutchPay);
             em.persist(sharing);
 
             Schedule memo = new Schedule();
