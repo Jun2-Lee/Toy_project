@@ -4,7 +4,6 @@ import bera31.Project.domain.page.groupbuying.GroupBuying;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
-import javax.persistence.Entity;
 import javax.persistence.EntityManager;
 import java.util.List;
 
@@ -36,7 +35,8 @@ public class GroupBuyingRepository {
                 .getSingleResult();
     }
 
-    public List<GroupBuying> findByKeword(String keyword) {
+
+    public List<GroupBuying> findByKeyword(String keyword) {
         return em.createQuery("select g from GroupBuying g where g.title LIKE :keyword", GroupBuying.class)
                 .setParameter("keyword", "%" + keyword + "%")
                 .getResultList();

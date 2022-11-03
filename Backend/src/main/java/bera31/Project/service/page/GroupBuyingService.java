@@ -19,7 +19,7 @@ public class GroupBuyingService {
     private final GroupBuyingRepository groupBuyingRepository;
 
     public List<GroupBuyingListResponseDto> searchGroupBuying(String keyword) {
-        return groupBuyingRepository.findByKeword(keyword)
+        return groupBuyingRepository.findByKeyword(keyword)
                 .stream()
                 .map(GroupBuyingListResponseDto::new)
                 .collect(Collectors.toList());
@@ -37,4 +37,7 @@ public class GroupBuyingService {
         return savedGroupBuying.getId();
     }
 
+    public Long updateGroupBuying(GroupBuyingRequestDto groupBuyingRequestDto, Long postId){
+        return groupBuyingRepository.findById(postId).update(groupBuyingRequestDto);
+    }
 }

@@ -26,6 +26,11 @@ public class GroupBuyingController {
         return groupBuyingService.postGroupBuying(groupBuyingRequestDto);
     }
 
+    @PostMapping("/api/groupBuying/{postId}")
+    public Long updateGroupBuying(@RequestBody GroupBuyingRequestDto groupBuyingRequestDto, @PathVariable Long postId) {
+        return groupBuyingService.updateGroupBuying(groupBuyingRequestDto, postId);
+    }
+
     @GetMapping("/api/groupBuying/{postId}")
     public GroupBuyingResponseDto findGroupBuying(@PathVariable Long postId) {
         return new GroupBuyingResponseDto();

@@ -1,13 +1,16 @@
 package bera31.Project;
 
+import bera31.Project.domain.dto.requestdto.GroupBuyingRequestDto;
 import bera31.Project.domain.dto.requestdto.ScheduleDto;
 import bera31.Project.domain.member.Member;
 import bera31.Project.domain.page.dutchpay.DutchPay;
+import bera31.Project.domain.page.groupbuying.GroupBuying;
 import bera31.Project.domain.page.sharing.Sharing;
 import bera31.Project.domain.schedule.Schedule;
 import bera31.Project.domain.schedule.ScheduleCategory;
 import bera31.Project.domain.message.Message;
 import bera31.Project.service.ScheduleService;
+import bera31.Project.service.page.GroupBuyingService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
@@ -34,6 +37,7 @@ public class InitDB {
 
         private final EntityManager em;
         private final ScheduleService memoService;
+        private final GroupBuyingService groupBuyingService;
 
         public void dbInit1() {
 
@@ -44,15 +48,14 @@ public class InitDB {
             Message message = new Message();
             message.setSender(member1);
             message.setReceiver(member2);
-            Sharing sharing = new Sharing();
-            DutchPay dutchPay = new DutchPay();
-            em.persist(dutchPay);
-            em.persist(sharing);
+            GroupBuying groupBuying = new GroupBuying();
+            em.persist(groupBuying);
 
             Schedule memo = new Schedule();
             memo.setCategory(ScheduleCategory.DutchPay);
             memo.setTitle("치킨 N빵");
             member1.addMemo(memo);
+
 
             em.persist(member1);
             em.persist(member2);
@@ -61,9 +64,10 @@ public class InitDB {
             em.flush();
             em.clear();
 
-            ScheduleDto scheduleDto = new ScheduleDto(memo.getId(), ScheduleCategory.Sharing, "나눔", LocalDateTime.now(), "여기", "ㅁㄴㅇㄹ");
-
-
+            GroupBuyingRequestDto groupBuyingRequestDto = new GroupBuyingRequestDto(
+                    "사계", "육류", "소고기", "LA갈비", "http://www.google.com/",
+                    "img src", 23000, 5, LocalDateTime.now(), "설명");
+            groupBuyingService.updateGroupBuying(groupBuyingRequestDto, groupBuying.getId());
         }
     }
 }
