@@ -35,6 +35,7 @@ public class InitDB {
         private final EntityManager em;
         private final ScheduleService memoService;
 
+
         public void dbInit1() {
 
             Member member1 = new Member();
@@ -54,14 +55,31 @@ public class InitDB {
             memo.setTitle("치킨 N빵");
             member1.addMemo(memo);
 
+            Ingredient ingredient = new Ingredient();
+            ingredient.setMeat(Meat.소고기);
+
+            Sharing sharing = new Sharing();
+            sharing.setTitle("재료 나눔함");
+            sharing.setCategory(ingredient);
+            sharing.setContent("채소 나눔해요");
+            member1.addSharing(sharing);
+
+            em.persist(ingredient);
             em.persist(member1);
             em.persist(member2);
             em.persist(memo);
+            em.persist(sharing);
+
 
             em.flush();
             em.clear();
 
             ScheduleDto scheduleDto = new ScheduleDto(memo.getId(), ScheduleCategory.Sharing, "나눔", LocalDateTime.now(), "여기", "ㅁㄴㅇㄹ");
+
+
+
+            SharingUpdateDto sharingUpdateDto = new SharingUpdateDto("아직 나눔 중", "나눔중", ingredient, LocalDateTime.now(), LocalDateTime.now(),"");
+            sharingService.updateSharing(sharing.getId(), sharingUpdateDto);
 
 
 
