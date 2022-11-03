@@ -23,7 +23,7 @@ public class InitDB {
     private final InitService initService;
 
     @PostConstruct
-    public void init(){
+    public void init() {
         initService.dbInit1();
     }
 
@@ -62,7 +62,6 @@ public class InitDB {
             em.clear();
 
             ScheduleDto scheduleDto = new ScheduleDto(memo.getId(), ScheduleCategory.Sharing, "나눔", LocalDateTime.now(), "여기", "ㅁㄴㅇㄹ");
-
 
 
         }

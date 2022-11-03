@@ -8,9 +8,11 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Getter @Setter
+@Getter
+@Setter
 public class Message {
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue
     @Column(name = "MESSAGE_ID")
     Long id;
     LocalDateTime sendTime;

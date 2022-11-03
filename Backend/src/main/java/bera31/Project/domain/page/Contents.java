@@ -15,7 +15,8 @@ import java.util.List;
 @Data
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public abstract class Contents {
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue
     @Column(name = "CONTENTS_ID")
     Long id;
 

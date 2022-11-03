@@ -17,18 +17,18 @@ import java.util.stream.Collectors;
 public class DutchPayService {
     private final DutchPayRepository dutchPayRepository;
 
-    public List<DutchPayListResponseDto> findAllDutchPay(){
+    public List<DutchPayListResponseDto> findAllDutchPay() {
         return dutchPayRepository.findAll()
                 .stream()
                 .map(DutchPayListResponseDto::new)
                 .collect(Collectors.toList());
     }
 
-    public Long postDutchPay(DutchPayRequestDto dutchPayRequestDto){
+    public Long postDutchPay(DutchPayRequestDto dutchPayRequestDto) {
         return dutchPayRepository.save(dutchPayRequestDto.toDutchPay());
     }
 
-    public String deleteDutchPay(Long id){
+    public String deleteDutchPay(Long id) {
         dutchPayRepository.delete(dutchPayRepository.findById(id));
         return "ok";
     }

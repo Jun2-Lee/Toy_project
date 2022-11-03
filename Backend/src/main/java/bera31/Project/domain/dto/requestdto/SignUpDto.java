@@ -18,7 +18,7 @@ public class SignUpDto {
 
 
     @Builder
-    public Member toMember(){
+    public Member toMember() {
         return Member.builder()
                 .email(email)
                 .password(password)

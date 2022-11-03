@@ -12,7 +12,7 @@ import java.util.List;
 @Entity
 public class Sharing extends Contents {
     @OneToOne
-    @JoinColumn(name="INGREDIENT_ID")
+    @JoinColumn(name = "INGREDIENT_ID")
     Ingredient category;
     LocalDateTime expiry;
 

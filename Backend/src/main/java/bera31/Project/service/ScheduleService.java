@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 public class ScheduleService {
     private final ScheduleRepository scheduleRepository;
 
-    public void postSchedule(@RequestBody ScheduleDto scheduleDto){
+    public void postSchedule(@RequestBody ScheduleDto scheduleDto) {
         // 로그인한 Member 찾기.
 
         Schedule memo = scheduleDto.toMemo();
@@ -23,12 +23,12 @@ public class ScheduleService {
     }
 
     @Transactional
-    public void updateSchedule(@RequestBody ScheduleDto scheduleDto){
+    public void updateSchedule(@RequestBody ScheduleDto scheduleDto) {
         Schedule findMemo = scheduleRepository.findById(scheduleDto.getId());
         findMemo.updateSchedule(scheduleDto);
     }
 
-    public void deleteSchedule(@RequestBody ScheduleDto scheduleDto){
+    public void deleteSchedule(@RequestBody ScheduleDto scheduleDto) {
 
         scheduleRepository.delete(scheduleRepository.findById(scheduleDto.getId()));
 

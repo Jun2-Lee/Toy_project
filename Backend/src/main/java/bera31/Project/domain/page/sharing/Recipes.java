@@ -8,7 +8,8 @@ import java.util.List;
 
 @Entity
 public class Recipes {
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue
     @Column(name = "RECIPES_ID")
     Long id;
 

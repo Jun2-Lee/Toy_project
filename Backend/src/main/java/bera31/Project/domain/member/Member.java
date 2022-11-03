@@ -19,13 +19,15 @@ import java.util.List;
 import java.util.Set;
 
 @Entity
-@Getter @Setter
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 public class Member {
 
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue
     @Column(name = "MEMBER_ID")
     Long id;
 
@@ -71,19 +73,23 @@ public class Member {
     @JoinColumn(name = "MEMBER_ID")
     List<Schedule> memoList = new ArrayList<>();
 
-    public void changePassword(String password){
+    public void changePassword(String password) {
         this.password = password;
     }
 
-    public void changeAddress(Address address){
+    public void changeAddress(Address address) {
         this.address = address;
     }
 
-    public void changeFood(List<Ingredient> ingredients){this.favoriteFood = ingredients;}
+    public void changeFood(List<Ingredient> ingredients) {
+        this.favoriteFood = ingredients;
+    }
 
-    public void changeImage(String image){this.profileImage = image;}
+    public void changeImage(String image) {
+        this.profileImage = image;
+    }
 
-    public void addMemo(Schedule schedule){
+    public void addMemo(Schedule schedule) {
         this.memoList.add(schedule);
     }
 }

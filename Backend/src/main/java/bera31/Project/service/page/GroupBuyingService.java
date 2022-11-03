@@ -18,21 +18,21 @@ import java.util.stream.Collectors;
 public class GroupBuyingService {
     private final GroupBuyingRepository groupBuyingRepository;
 
-    public List<GroupBuyingListResponseDto> searchGroupBuying(String keyword){
+    public List<GroupBuyingListResponseDto> searchGroupBuying(String keyword) {
         return groupBuyingRepository.findByKeword(keyword)
                 .stream()
                 .map(GroupBuyingListResponseDto::new)
                 .collect(Collectors.toList());
     }
 
-    public List<GroupBuyingListResponseDto> findAllGroupBuying(){
+    public List<GroupBuyingListResponseDto> findAllGroupBuying() {
         return groupBuyingRepository.findAll()
                 .stream()
                 .map(GroupBuyingListResponseDto::new)
                 .collect(Collectors.toList());
     }
 
-    public Long postGroupBuying(GroupBuyingRequestDto groupBuyingRequestDto){
+    public Long postGroupBuying(GroupBuyingRequestDto groupBuyingRequestDto) {
         GroupBuying savedGroupBuying = groupBuyingRepository.save(new GroupBuying(groupBuyingRequestDto));
         return savedGroupBuying.getId();
     }

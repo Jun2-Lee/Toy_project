@@ -12,17 +12,17 @@ import java.util.List;
 public class MessageRepository {
     private final EntityManager em;
 
-    public Message save(Message message){
+    public Message save(Message message) {
         em.persist(message);
         return message;
     }
 
-    public void delete(Message message){
+    public void delete(Message message) {
         em.remove(message);
         return;
     }
 
-    public List<Message> findAll(){
+    public List<Message> findAll() {
         return em.createQuery("select m from Message m", Message.class)
                 .getResultList();
     }

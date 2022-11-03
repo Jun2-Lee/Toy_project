@@ -15,28 +15,28 @@ public class GroupBuyingRepository {
 
     private final EntityManager em;
 
-    public GroupBuying save(GroupBuying groupBuying){
+    public GroupBuying save(GroupBuying groupBuying) {
         em.persist(groupBuying);
         return groupBuying;
     }
 
-    public void delete(GroupBuying groupBuying){
+    public void delete(GroupBuying groupBuying) {
         em.remove(groupBuying);
         return;
     }
 
-    public List<GroupBuying> findAll(){
+    public List<GroupBuying> findAll() {
         return em.createQuery("select g from GroupBuying g", GroupBuying.class)
                 .getResultList();
     }
 
-    public GroupBuying findById(long id){
+    public GroupBuying findById(long id) {
         return em.createQuery("select g from GroupBuying g where g.id =:id", GroupBuying.class)
                 .setParameter("id", id)
                 .getSingleResult();
     }
 
-    public List<GroupBuying> findByKeword(String keyword){
+    public List<GroupBuying> findByKeword(String keyword) {
         return em.createQuery("select g from GroupBuying g where g.title LIKE :keyword", GroupBuying.class)
                 .setParameter("keyword", "%" + keyword + "%")
                 .getResultList();

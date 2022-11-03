@@ -8,8 +8,9 @@ import javax.persistence.*;
 
 @Entity
 @Data
-public class DutchPayIntersection  {
-    @Id @GeneratedValue
+public class DutchPayIntersection {
+    @Id
+    @GeneratedValue
     Long id;
 
     @ManyToOne

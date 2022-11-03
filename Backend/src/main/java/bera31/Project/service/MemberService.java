@@ -16,12 +16,12 @@ public class MemberService {
     private final MemberRepository memberRepository;
     private final IngredientRepository ingredientRepository;
 
-    public void changePassword(@RequestBody String password){
+    public void changePassword(@RequestBody String password) {
         //멤버 찾기(로그인 구현 후에 할 예정)
         //member.changePassword(password);
     }
 
-    public void changeMyInfo(@RequestBody Address address){
+    public void changeMyInfo(@RequestBody Address address) {
         //멤버 찾기(로그인 구현 후에 할 예정)
         //member.changeAddress(address);
         //member.changeFood(List<Ingredient> ingredient);
@@ -29,18 +29,18 @@ public class MemberService {
     }
 
     @Transactional(readOnly = true)
-    public void/*List<Memo>*/ findMyMemo(){
+    public void/*List<Memo>*/ findMyMemo() {
         //멤버 찾기(로그인 구현 후에 할 예정)
         //return member.getMemoList();
     }
 
-    public void deleteMember(){
+    public void deleteMember() {
         //멤버 찾기(로그인 구현 후에 할 예정)
         //memberRepository.delete(member);
     }
 
-    public String findPassword(@RequestBody String email) throws Exception{
-        if(memberRepository.findByEmail(email).isPresent())
+    public String findPassword(@RequestBody String email) throws Exception {
+        if (memberRepository.findByEmail(email).isPresent())
             return memberRepository.findByEmail(email).get().getPassword();
         else
             throw new Exception("없는 이메일 입니다.");

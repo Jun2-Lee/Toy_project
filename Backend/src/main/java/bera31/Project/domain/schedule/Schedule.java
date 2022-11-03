@@ -15,7 +15,8 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Schedule {
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue
     long id;
 
     @Enumerated(EnumType.STRING)
