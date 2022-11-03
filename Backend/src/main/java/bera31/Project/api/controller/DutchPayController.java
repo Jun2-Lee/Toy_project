@@ -15,17 +15,17 @@ public class DutchPayController {
     private final DutchPayService dutchPayService;
 
     @GetMapping("/api/dutchPay")
-    public List<DutchPayListResponseDto> findAll(){
+    public List<DutchPayListResponseDto> findAll() {
         return dutchPayService.findAllDutchPay();
     }
 
     @PostMapping("/api/dutchPay")
-    public Long postDutchPay(@RequestBody DutchPayRequestDto dutchPayRequestDto){
+    public Long postDutchPay(@RequestBody DutchPayRequestDto dutchPayRequestDto) {
         return dutchPayService.postDutchPay(dutchPayRequestDto);
     }
 
     @DeleteMapping("/api/dutchPay/{dutchPayId}")
-    public void deleteDutchPay(@PathVariable Long dutchPayId){
+    public void deleteDutchPay(@PathVariable Long dutchPayId) {
         dutchPayService.deleteDutchPay(dutchPayId);
         return;
     }

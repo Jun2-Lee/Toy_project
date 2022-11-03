@@ -20,8 +20,8 @@ public class DutchPayRequestDto {
     double x;
     double y;
 
-    public DutchPay toDutchPay(){
-        return new DutchPay( this.title, this.category, this.store, this.deliveryCost,
+    public DutchPay toDutchPay() {
+        return new DutchPay(this.title, this.category, this.store, this.deliveryCost,
                 this.limitMember, this.content, this.x, this.y, this.deadLine);
     }
 }

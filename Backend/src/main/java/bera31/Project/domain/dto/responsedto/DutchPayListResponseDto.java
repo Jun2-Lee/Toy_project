@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+
 import java.time.LocalDateTime;
 
 @Getter
@@ -21,7 +22,7 @@ public class DutchPayListResponseDto {
     int limitMember;
     LocalDateTime deadLine;
 
-    public DutchPayListResponseDto(DutchPay dutchPay){
+    public DutchPayListResponseDto(DutchPay dutchPay) {
         this.id = dutchPay.getId();
         this.store = dutchPay.getStore();
         this.category = dutchPay.getCategory();

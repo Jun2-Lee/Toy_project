@@ -7,7 +7,8 @@ import javax.persistence.*;
 @Entity
 @Data
 public class Ingredient {
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue
     @Column(name = "INGREDIENT_ID")
     Long id;
 

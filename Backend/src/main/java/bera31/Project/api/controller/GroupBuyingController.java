@@ -17,22 +17,27 @@ public class GroupBuyingController {
     private final GroupBuyingService groupBuyingService;
 
     @GetMapping("/api/groupBuying")
-    public List<GroupBuyingListResponseDto> findAllGroupBuying(){
+    public List<GroupBuyingListResponseDto> findAllGroupBuying() {
         return groupBuyingService.findAllGroupBuying();
     }
 
     @PostMapping("/api/groupBuying")
-    public Long postGroupBuying(@RequestBody GroupBuyingRequestDto groupBuyingRequestDto){
+    public Long postGroupBuying(@RequestBody GroupBuyingRequestDto groupBuyingRequestDto) {
         return groupBuyingService.postGroupBuying(groupBuyingRequestDto);
     }
 
+    @PostMapping("/api/groupBuying/{postId}")
+    public Long updateGroupBuying(@RequestBody GroupBuyingRequestDto groupBuyingRequestDto, @PathVariable Long postId) {
+        return groupBuyingService.updateGroupBuying(groupBuyingRequestDto, postId);
+    }
+
     @GetMapping("/api/groupBuying/{postId}")
-    public GroupBuyingResponseDto findGroupBuying(@PathVariable Long postId){
+    public GroupBuyingResponseDto findGroupBuying(@PathVariable Long postId) {
         return new GroupBuyingResponseDto();
     }
 
     @PostMapping("/api/groupBuying/{keyword}")
-    public List<GroupBuyingListResponseDto> searchGroupBuying(@PathVariable String keyword){
+    public List<GroupBuyingListResponseDto> searchGroupBuying(@PathVariable String keyword) {
         return groupBuyingService.searchGroupBuying(keyword);
     }
 }

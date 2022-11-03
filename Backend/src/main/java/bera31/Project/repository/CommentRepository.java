@@ -13,17 +13,17 @@ public class CommentRepository {
 
     private final EntityManager em;
 
-    public Comment save(Comment comment){
+    public Comment save(Comment comment) {
         em.persist(comment);
         return comment;
     }
 
-    public void delete(Comment comment){
+    public void delete(Comment comment) {
         em.remove(comment);
         return;
     }
 
-    public List<Comment> findAll(){
+    public List<Comment> findAll() {
         return em.createQuery("select c from Comment c", Comment.class)
                 .getResultList();
     }

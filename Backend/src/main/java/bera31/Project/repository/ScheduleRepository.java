@@ -12,12 +12,12 @@ public class ScheduleRepository {
 
     private final EntityManager em;
 
-    public Schedule save(Schedule memo){
+    public Schedule save(Schedule memo) {
         em.persist(memo);
         return memo;
     }
 
-    public void delete(Schedule memo){
+    public void delete(Schedule memo) {
         em.remove(memo);
         return;
     }
@@ -27,7 +27,6 @@ public class ScheduleRepository {
                 .setParameter("id", id)
                 .getSingleResult();
     }
-
 
 
 }

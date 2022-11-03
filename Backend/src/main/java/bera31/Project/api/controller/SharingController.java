@@ -8,12 +8,12 @@ import org.springframework.web.bind.annotation.*;
 public class SharingController {
 
     @PostMapping("/api/sharingPosts")
-    public String createSharing(){
+    public String createSharing() {
         return "ok";
     }
 
     @GetMapping("/api/sharingPosts")
-    public String sharingPosts(){
+    public String sharingPosts() {
         return "ok";
     }
 
@@ -23,17 +23,17 @@ public class SharingController {
     }
 
     @GetMapping("/api/sharingPosts/{sharingId}")
-    public String findSharing(@PathVariable String sharingId){
+    public String findSharing(@PathVariable String sharingId) {
         return "ok";
     }
 
     @PutMapping("/api/sharingPosts/{sharingId}")
-    public String changeSharing(@PathVariable String sharingId){
+    public String changeSharing(@PathVariable String sharingId) {
         return "ok";
     }
 
     @DeleteMapping("/api/sharingPosts/{sharingId}")
-    public String deleteSharing(@PathVariable String sharingId){
+    public String deleteSharing(@PathVariable String sharingId) {
         return "ok";
     }
 

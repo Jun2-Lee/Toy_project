@@ -12,7 +12,7 @@ import javax.persistence.EntityManager;
 public class IngredientRepository {
     private final EntityManager em;
 
-    public Ingredient findById(Long id){
+    public Ingredient findById(Long id) {
         return em.createQuery("select i from Ingredient i where i.id =:id", Ingredient.class)
                 .setParameter("id", id)
                 .getSingleResult();

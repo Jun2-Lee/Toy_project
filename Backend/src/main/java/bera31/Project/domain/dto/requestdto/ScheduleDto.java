@@ -21,7 +21,7 @@ public class ScheduleDto {
     String content;
 
     @Builder
-    public Schedule toMemo(){
+    public Schedule toMemo() {
         return Schedule.builder()
                 .category(category)
                 .title(title)

@@ -18,11 +18,11 @@ public class AuthService {
     @Transactional
     public void signUp(@RequestBody SignUpDto signUpDto) throws Exception {
 
-        if(memberRepository.findByEmail(signUpDto.getEmail()).isPresent()){
+        if (memberRepository.findByEmail(signUpDto.getEmail()).isPresent()) {
             throw new Exception("이미 있는 회원입니다");
         }
 
-        if(memberRepository.findByNickName(signUpDto.getNickname()).isPresent()){
+        if (memberRepository.findByNickName(signUpDto.getNickname()).isPresent()) {
             throw new Exception("이미 있는 닉네임입니다");
         }
 
@@ -30,8 +30,6 @@ public class AuthService {
         memberRepository.save(member);
         return;
     }
-
-
 
 
 }

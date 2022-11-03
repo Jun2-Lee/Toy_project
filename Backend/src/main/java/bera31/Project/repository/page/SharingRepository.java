@@ -14,23 +14,23 @@ public class SharingRepository {
 
     private final EntityManager em;
 
-    public Sharing save(Sharing sharing){
+    public Sharing save(Sharing sharing) {
         em.persist(sharing);
         return sharing;
     }
 
-    public void delete(Sharing sharing){
+    public void delete(Sharing sharing) {
         em.remove(sharing);
         return;
     }
 
-    public List<Sharing> findAll(){
+    public List<Sharing> findAll() {
         return em.createQuery("select s from Sharing s", Sharing.class)
                 .getResultList();
     }
 
-    public Sharing findById(long id){
-        return em.createQuery("select s from Sharing s where s.id =:id",Sharing.class)
+    public Sharing findById(long id) {
+        return em.createQuery("select s from Sharing s where s.id =:id", Sharing.class)
                 .setParameter("id", id)
                 .getSingleResult();
     }

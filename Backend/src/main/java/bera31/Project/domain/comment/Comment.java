@@ -11,7 +11,8 @@ import java.util.List;
 
 @Entity
 public class Comment {
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue
     Long id;
 
     @ManyToOne

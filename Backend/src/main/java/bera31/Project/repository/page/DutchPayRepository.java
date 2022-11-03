@@ -13,28 +13,28 @@ import java.util.List;
 public class DutchPayRepository {
     private final EntityManager em;
 
-    public Long save(DutchPay dutchPay){
+    public Long save(DutchPay dutchPay) {
         em.persist(dutchPay);
         return dutchPay.getId();
     }
 
-    public void delete(DutchPay dutchPay){
+    public void delete(DutchPay dutchPay) {
         em.remove(dutchPay);
         return;
     }
 
-    public List<DutchPay> findAll(){
+    public List<DutchPay> findAll() {
         return em.createQuery("select d from DutchPay d", DutchPay.class)
                 .getResultList();
     }
 
-    public DutchPay findById(long id){
+    public DutchPay findById(long id) {
         return em.createQuery("select d from DutchPay d where d.id =:id", DutchPay.class)
                 .setParameter("id", id)
                 .getSingleResult();
     }
 
-    public List<DutchPay> findByKeword(String keyword){
+    public List<DutchPay> findByKeword(String keyword) {
         return em.createQuery("select d from DutchPay d where d.title LIKE :keyword", DutchPay.class)
                 .setParameter("keyword", "%" + keyword + "%")
                 .getResultList();

@@ -26,7 +26,7 @@ public class GroupBuyingListResponseDto {
     int currParticipant;
 
 
-    public GroupBuyingListResponseDto(GroupBuying groupBuying){
+    public GroupBuyingListResponseDto(GroupBuying groupBuying) {
         Member author = groupBuying.getUser();
         this.id = groupBuying.getId();
         this.image = groupBuying.getImage();
@@ -36,6 +36,6 @@ public class GroupBuyingListResponseDto {
         this.address = author.getAddress();
         this.deadLine = groupBuying.getDeadLine();
         this.limit = groupBuying.getLimitMember();
-        this. currParticipant = groupBuying.getMemberList().size();
+        this.currParticipant = groupBuying.getMemberList().size();
     }
 }

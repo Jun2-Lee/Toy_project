@@ -36,7 +36,8 @@ public class DutchPay extends Contents {
         this.store = store;
         this.deliveryCost = deliveryCost;
         this.limitMember = limitMember;
-        this.x = x; this.y = y;
+        this.x = x;
+        this.y = y;
         this.deadLine = deadLine;
         this.content = content;
     }
