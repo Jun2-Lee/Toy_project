@@ -1,5 +1,6 @@
 package bera31.Project.service.page;
 
+import bera31.Project.domain.dto.page.SharingDetailDto;
 import bera31.Project.domain.dto.page.SharingDto;
 import bera31.Project.domain.dto.page.SharingResponseDto;
 import bera31.Project.domain.dto.page.SharingUpdateDto;
@@ -39,10 +40,16 @@ public class SharingService {
     }
 
     @Transactional(readOnly = true)
-    public List<SharingResponseDto> findSharings(){
+    public List<SharingResponseDto> findAllSharing(){
         return sharingRepository.findAll().stream()
                 .map(SharingResponseDto::new)
                 .collect(Collectors.toList());
+    }
+
+    @Transactional(readOnly = true)
+    public SharingDetailDto findSharing(Long id){
+        SharingDetailDto sharing = sharingRepository.detail(id);
+        return sharing;
     }
 
 }
