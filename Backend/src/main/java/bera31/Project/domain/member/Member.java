@@ -1,10 +1,8 @@
 package bera31.Project.domain.member;
 
 import bera31.Project.domain.Address;
-import bera31.Project.domain.ingredient.Ingredient;
 import bera31.Project.domain.message.Room;
 import bera31.Project.domain.schedule.Schedule;
-import bera31.Project.domain.message.Message;
 import bera31.Project.domain.page.dutchpay.DutchPay;
 import bera31.Project.domain.page.groupbuying.GroupBuying;
 import bera31.Project.domain.page.intersection.DutchPayIntersection;
@@ -14,9 +12,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 @Entity
 @Getter
@@ -49,10 +45,10 @@ public class Member {
     List<DutchPay> dutchPayList = new ArrayList<>();
 
     @OneToMany(mappedBy = "participant")
-    List<GroupBuyingIntersection> gbi = new ArrayList<>();
+    List<GroupBuyingIntersection> participantingGroupBuying = new ArrayList<>();
 
     @OneToMany(mappedBy = "participant")
-    List<DutchPayIntersection> dpi = new ArrayList<>();
+    List<DutchPayIntersection> participantingDutchPay = new ArrayList<>();
 
     @OneToMany
     @JoinColumn(name = "MEMBER_ID")
@@ -62,9 +58,8 @@ public class Member {
     @JoinColumn(name = "MEMBER_ID")
     List<GroupBuying> favoriteBuying = new ArrayList<>();
 
-    @OneToMany
-    @JoinColumn(name = "MEMBER_ID")
-    List<Ingredient> favoriteFood = new ArrayList<>();
+    @Transient
+    List<String> favoriteFood = new ArrayList<>();
 
     @OneToMany(mappedBy = "member1")
     List<Room> roomList = new ArrayList<>();
@@ -81,10 +76,6 @@ public class Member {
         this.address = address;
     }
 
-    public void changeFood(List<Ingredient> ingredients) {
-        this.favoriteFood = ingredients;
-    }
-
     public void changeImage(String image) {
         this.profileImage = image;
     }
@@ -95,5 +86,11 @@ public class Member {
 
     public void addSharing(Sharing sharing) {
         this.sharingList.add(sharing);
+    }
+
+    public void addFavoriteSharing(Sharing sharing) { this.favoriteSharing.add(sharing); }
+
+    public void addFavoriteGroupBuying(GroupBuying groupBuying) {
+        this.favoriteBuying.add(groupBuying);
     }
 }
