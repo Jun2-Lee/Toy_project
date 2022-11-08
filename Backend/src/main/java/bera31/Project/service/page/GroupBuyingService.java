@@ -45,4 +45,12 @@ public class GroupBuyingService {
     public GroupBuyingResponseDto findGroupBuying(Long postId) {
         return new GroupBuyingResponseDto(groupBuyingRepository.findById(postId));
     }
+
+    public void updateFavoriteGroupBuying(Long postId){
+        // 멤버 받아와서
+        // member.getFavoriteRepository().find();
+        // 이미 있는지 ? 없으면 ==> member.add 함수 실행
+        //            있으면 ==> member.remove 함수 실행
+        groupBuyingRepository.findById(postId);
+    }
 }

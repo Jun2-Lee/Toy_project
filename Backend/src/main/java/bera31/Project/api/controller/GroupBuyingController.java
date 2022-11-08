@@ -40,4 +40,9 @@ public class GroupBuyingController {
     public List<GroupBuyingListResponseDto> searchGroupBuying(@PathVariable String keyword) {
         return groupBuyingService.searchGroupBuying(keyword);
     }
+
+    @PostMapping("/api/groupBuying/{postId}/heart")
+    public void addFavoriteGroupBuying(@PathVariable Long postId){
+        groupBuyingService.updateFavoriteGroupBuying(postId);
+    }
 }

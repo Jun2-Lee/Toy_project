@@ -89,8 +89,9 @@ public class Member {
     }
 
     public void addFavoriteSharing(Sharing sharing) { this.favoriteSharing.add(sharing); }
-
+    public void cancelFavoriteSharing(Sharing sharing) { this.favoriteSharing.remove(sharing); }
     public void addFavoriteGroupBuying(GroupBuying groupBuying) {
         this.favoriteBuying.add(groupBuying);
     }
+    public void cancelFavoriteGroupBuying(GroupBuying groupBuying) { this.favoriteBuying.remove(groupBuying); }
 }
