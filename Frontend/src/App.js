@@ -11,8 +11,6 @@ function App() {
   return (
     <div className="page">
       <Navbar />
-      
-
       <div className="body">
         <Router>
           <Routes>
