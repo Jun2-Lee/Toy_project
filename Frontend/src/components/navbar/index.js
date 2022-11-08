@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import logo from '../../assets/img/logo.png';
 import default_profile from '../../assets/img/default_profile.png';
 import chatting_icon from '../../assets/img/chatting_icon.png';
+import './navbar.css';
 
 function navbar() {
   return (
