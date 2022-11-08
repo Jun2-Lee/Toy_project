@@ -22,7 +22,7 @@ public class GroupBuyingResponseDto {
         this.nickName = groupBuying.getUser().getNickname();
         this.manner = groupBuying.getUser().getManner();
         this.category = groupBuying.getCategory();
-        this.product = groupBuying.getProductName();
+        this.product = groupBuying.getProduct();
         this.deadLine = groupBuying.getDeadLine();
         this.currentMember = groupBuying.getMemberList().size();
         this.limitMember = groupBuying.getLimitMember();
