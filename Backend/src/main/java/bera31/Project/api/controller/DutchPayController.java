@@ -5,7 +5,6 @@ import bera31.Project.domain.dto.responsedto.DutchPayListResponseDto;
 import bera31.Project.domain.dto.responsedto.DutchPayResponseDto;
 import bera31.Project.service.page.DutchPayService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
