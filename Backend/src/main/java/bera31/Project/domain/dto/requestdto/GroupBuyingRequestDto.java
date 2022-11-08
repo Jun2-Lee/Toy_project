@@ -13,7 +13,7 @@ public class GroupBuyingRequestDto {
     String title;
     String ingredient;
     String category;
-    String productName;
+    String product;
     String link;
     String image;
     int price;
