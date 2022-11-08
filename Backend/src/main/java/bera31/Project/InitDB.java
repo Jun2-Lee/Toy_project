@@ -1,4 +1,5 @@
 package bera31.Project;
+
 import bera31.Project.service.ScheduleService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
@@ -14,7 +15,7 @@ public class InitDB {
     private final InitService initService;
 
     @PostConstruct
-    public void init(){
+    public void init() {
         initService.dbInit1();
     }
 

@@ -1,4 +1,5 @@
 package bera31.Project.domain.dto.requestdto;
+
 import bera31.Project.domain.page.groupbuying.GroupBuying;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

@@ -38,11 +38,11 @@ public class GroupBuyingService {
         return savedGroupBuying.getId();
     }
 
-    public Long updateGroupBuying(GroupBuyingRequestDto groupBuyingRequestDto, Long postId){
+    public Long updateGroupBuying(GroupBuyingRequestDto groupBuyingRequestDto, Long postId) {
         return groupBuyingRepository.findById(postId).update(groupBuyingRequestDto);
     }
 
-    public GroupBuyingResponseDto findGroupBuying(Long postId){
+    public GroupBuyingResponseDto findGroupBuying(Long postId) {
         return new GroupBuyingResponseDto(groupBuyingRepository.findById(postId));
     }
 }

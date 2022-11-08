@@ -93,7 +93,7 @@ public class Member {
         this.memoList.add(schedule);
     }
 
-    public void addSharing(Sharing sharing){
+    public void addSharing(Sharing sharing) {
         this.sharingList.add(sharing);
     }
 }

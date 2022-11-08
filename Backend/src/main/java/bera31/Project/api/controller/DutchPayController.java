@@ -31,7 +31,7 @@ public class DutchPayController {
     }
 
     @GetMapping("/api/dutchPay/{dutchPayId}")
-    public DutchPayResponseDto findDutchPay(@PathVariable Long dutchPayId){
+    public DutchPayResponseDto findDutchPay(@PathVariable Long dutchPayId) {
         return dutchPayService.findDutchPay(dutchPayId);
     }
 

@@ -33,7 +33,7 @@ public class DutchPayService {
         return "ok";
     }
 
-    public DutchPayResponseDto findDutchPay(Long id){
+    public DutchPayResponseDto findDutchPay(Long id) {
         return new DutchPayResponseDto(dutchPayRepository.findById(id));
     }
 }
