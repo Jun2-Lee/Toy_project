@@ -33,7 +33,7 @@ public class GroupBuyingController {
 
     @GetMapping("/api/groupBuying/{postId}")
     public GroupBuyingResponseDto findGroupBuying(@PathVariable Long postId) {
-        return new GroupBuyingResponseDto();
+        return groupBuyingService.findGroupBuying(postId);
     }
 
     @PostMapping("/api/groupBuying/{keyword}")

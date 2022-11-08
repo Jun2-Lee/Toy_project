@@ -12,7 +12,6 @@ import java.time.LocalDateTime;
 @Builder
 @AllArgsConstructor
 public class ScheduleDto {
-
     Long id;
     ScheduleCategory category;
     String title;

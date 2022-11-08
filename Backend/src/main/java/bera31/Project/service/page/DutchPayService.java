@@ -2,7 +2,7 @@ package bera31.Project.service.page;
 
 import bera31.Project.domain.dto.requestdto.DutchPayRequestDto;
 import bera31.Project.domain.dto.responsedto.DutchPayListResponseDto;
-import bera31.Project.domain.page.dutchpay.DutchPay;
+import bera31.Project.domain.dto.responsedto.DutchPayResponseDto;
 import bera31.Project.repository.page.DutchPayRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -31,5 +31,9 @@ public class DutchPayService {
     public String deleteDutchPay(Long id) {
         dutchPayRepository.delete(dutchPayRepository.findById(id));
         return "ok";
+    }
+
+    public DutchPayResponseDto findDutchPay(Long id) {
+        return new DutchPayResponseDto(dutchPayRepository.findById(id));
     }
 }

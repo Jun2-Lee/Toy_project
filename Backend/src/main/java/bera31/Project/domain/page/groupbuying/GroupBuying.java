@@ -1,13 +1,9 @@
 package bera31.Project.domain.page.groupbuying;
 
 import bera31.Project.domain.dto.requestdto.GroupBuyingRequestDto;
-import bera31.Project.domain.ingredient.Ingredient;
-import bera31.Project.domain.member.Member;
 import bera31.Project.domain.page.Contents;
 import bera31.Project.domain.page.intersection.GroupBuyingIntersection;
-import jdk.jfr.BooleanFlag;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -21,12 +17,9 @@ import java.util.List;
 @NoArgsConstructor
 @Data
 public class GroupBuying extends Contents {
-    String productName;
     String link;
-
-    @OneToOne
-    @JoinColumn(name = "INGREDIENT_ID")
-    Ingredient category;
+    String category; //////////
+    String product;
     LocalDateTime deadLine;
     String content;
     int cost;
@@ -41,7 +34,7 @@ public class GroupBuying extends Contents {
         this.cost = groupBuyingRequestDto.getPrice();
         this.limitMember = groupBuyingRequestDto.getMemberLimit();
         this.content = groupBuyingRequestDto.getContent();
-        this.productName = groupBuyingRequestDto.getProductName();
+        this.product = groupBuyingRequestDto.getProduct();
         this.deadLine = groupBuyingRequestDto.getDeadLine();
         this.link = groupBuyingRequestDto.getLink();
         this.image = groupBuyingRequestDto.getImage();
@@ -54,7 +47,8 @@ public class GroupBuying extends Contents {
         this.limitMember = groupBuyingRequestDto.getMemberLimit();
         this.content = groupBuyingRequestDto.getContent();
         this.isFinish = false;
-        this.productName = groupBuyingRequestDto.getProductName();
+        this.category = groupBuyingRequestDto.getCategory();
+        this.product = groupBuyingRequestDto.getProduct();
         this.deadLine = groupBuyingRequestDto.getDeadLine();
         this.postTime = LocalDateTime.now();
         this.link = groupBuyingRequestDto.getLink();

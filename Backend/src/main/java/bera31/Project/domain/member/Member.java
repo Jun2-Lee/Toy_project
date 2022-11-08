@@ -92,4 +92,8 @@ public class Member {
     public void addMemo(Schedule schedule) {
         this.memoList.add(schedule);
     }
+
+    public void addSharing(Sharing sharing) {
+        this.sharingList.add(sharing);
+    }
 }
