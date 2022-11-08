@@ -2,6 +2,7 @@ package bera31.Project.api.controller;
 
 import bera31.Project.domain.dto.requestdto.DutchPayRequestDto;
 import bera31.Project.domain.dto.responsedto.DutchPayListResponseDto;
+import bera31.Project.domain.dto.responsedto.DutchPayResponseDto;
 import bera31.Project.service.page.DutchPayService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -29,4 +30,10 @@ public class DutchPayController {
         dutchPayService.deleteDutchPay(dutchPayId);
         return;
     }
+
+    @GetMapping("/api/dutchPay/{dutchPayId}")
+    public DutchPayResponseDto findDutchPay(@PathVariable Long dutchPayId){
+        return dutchPayService.findDutchPay(dutchPayId);
+    }
+
 }
