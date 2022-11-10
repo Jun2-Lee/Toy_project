@@ -1,10 +1,8 @@
 package bera31.Project.domain.member;
 
 import bera31.Project.domain.Address;
-import bera31.Project.domain.ingredient.Ingredient;
 import bera31.Project.domain.message.Room;
 import bera31.Project.domain.schedule.Schedule;
-import bera31.Project.domain.message.Message;
 import bera31.Project.domain.page.dutchpay.DutchPay;
 import bera31.Project.domain.page.groupbuying.GroupBuying;
 import bera31.Project.domain.page.intersection.DutchPayIntersection;
@@ -14,9 +12,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 @Entity
 @Getter
@@ -62,10 +58,6 @@ public class Member {
     @JoinColumn(name = "MEMBER_ID")
     List<GroupBuying> favoriteBuying = new ArrayList<>();
 
-    @OneToMany
-    @JoinColumn(name = "MEMBER_ID")
-    List<Ingredient> favoriteFood = new ArrayList<>();
-
     @OneToMany(mappedBy = "member1")
     List<Room> roomList = new ArrayList<>();
 
@@ -79,10 +71,6 @@ public class Member {
 
     public void changeAddress(Address address) {
         this.address = address;
-    }
-
-    public void changeFood(List<Ingredient> ingredients) {
-        this.favoriteFood = ingredients;
     }
 
     public void changeImage(String image) {

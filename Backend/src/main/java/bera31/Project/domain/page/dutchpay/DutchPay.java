@@ -16,6 +16,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class DutchPay extends Contents {
+    @Enumerated(EnumType.STRING)
     Category category;
     String store;
     int deliveryCost;
