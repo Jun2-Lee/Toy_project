@@ -1,18 +1,15 @@
-package bera31.Project.domain.dto.page;
+package bera31.Project.domain.dto.responsedto;
 
 import bera31.Project.domain.Address;
 import bera31.Project.domain.member.Member;
 import bera31.Project.domain.page.sharing.Sharing;
-import lombok.Getter;
 
 import java.time.LocalDateTime;
 import java.util.Objects;
 
-/**
- * 사진, 닉네임, 제목, 주소, deadline, 작성날짜, 찜
- */
-@Getter
-public class SharingResponseDto {
+
+public class SharingListResponseDto {
+
     String nickname;
     String title;
     Address location;
@@ -20,7 +17,7 @@ public class SharingResponseDto {
     LocalDateTime postTime;
     boolean favoriteSharing;
 
-    public SharingResponseDto(Sharing sharing){
+    public SharingListResponseDto(Sharing sharing){
         this.nickname = sharing.getUser().getNickname();
         this.title = sharing.getTitle();
         this.location = sharing.getLocation();
@@ -32,7 +29,7 @@ public class SharingResponseDto {
         else this.favoriteSharing = false;
     }
 
-    private boolean searchFavorite(Long id,Member member){
+    private boolean searchFavorite(Long id, Member member){
         for (Sharing sharing : member.getFavoriteSharing()) {
             if(Objects.equals(sharing.getId(), id)) return true;
         }

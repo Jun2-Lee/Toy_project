@@ -1,24 +1,22 @@
-package bera31.Project.domain.dto.page;
+package bera31.Project.domain.dto.responsedto;
 
 import bera31.Project.domain.Address;
 import bera31.Project.domain.comment.Comment;
-import bera31.Project.domain.ingredient.Ingredient;
 import bera31.Project.domain.page.sharing.Sharing;
-import lombok.Getter;
 
 import java.time.LocalDateTime;
 import java.util.List;
-//TODO: page패키지 없애고, request랑 response패키지로 나눠주기
-@Getter
-public class SharingDetailDto {
+
+public class SharingResponseDto {
 
     Long id;
     Double manner;
     String nickname;
-    String profileimage;
+    String profileImage;
     String title;
     String content;
-    Ingredient category;
+    String category;
+    String product;
     Address location;
     LocalDateTime deadLine;
     LocalDateTime expiry;
@@ -26,11 +24,11 @@ public class SharingDetailDto {
     String image;
     List<Comment> comment;
 
-    public SharingDetailDto(Sharing sharing){
+    public SharingResponseDto(Sharing sharing){
         this.id = sharing.getId();
         this.manner = sharing.getUser().getManner();
         this.nickname = sharing.getUser().getNickname();
-        this.profileimage = sharing.getUser().getProfileImage();
+        this.profileImage = sharing.getUser().getProfileImage();
         this.title = sharing.getTitle();
         this.content = sharing.getContent();
         this.category = sharing.getCategory();
