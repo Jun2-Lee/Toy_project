@@ -17,9 +17,13 @@ import java.util.List;
 @NoArgsConstructor
 @Data
 public class GroupBuying extends Contents {
-    String productName;
     String link;
+<<<<<<< HEAD
 
+=======
+    String category; //////////
+    String product;
+>>>>>>> main
     LocalDateTime deadLine;
     String content;
     int cost;
@@ -34,7 +38,7 @@ public class GroupBuying extends Contents {
         this.cost = groupBuyingRequestDto.getPrice();
         this.limitMember = groupBuyingRequestDto.getMemberLimit();
         this.content = groupBuyingRequestDto.getContent();
-        this.productName = groupBuyingRequestDto.getProductName();
+        this.product = groupBuyingRequestDto.getProduct();
         this.deadLine = groupBuyingRequestDto.getDeadLine();
         this.link = groupBuyingRequestDto.getLink();
         this.image = groupBuyingRequestDto.getImage();
@@ -47,7 +51,8 @@ public class GroupBuying extends Contents {
         this.limitMember = groupBuyingRequestDto.getMemberLimit();
         this.content = groupBuyingRequestDto.getContent();
         this.isFinish = false;
-        this.productName = groupBuyingRequestDto.getProductName();
+        this.category = groupBuyingRequestDto.getCategory();
+        this.product = groupBuyingRequestDto.getProduct();
         this.deadLine = groupBuyingRequestDto.getDeadLine();
         this.postTime = LocalDateTime.now();
         this.link = groupBuyingRequestDto.getLink();

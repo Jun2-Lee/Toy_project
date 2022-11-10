@@ -1,7 +1,10 @@
 package bera31.Project.domain.page.sharing;
 
 import bera31.Project.domain.Address;
+<<<<<<< HEAD
 import bera31.Project.domain.dto.requestdto.SharingRequestDto;
+=======
+>>>>>>> main
 import bera31.Project.domain.member.Member;
 import bera31.Project.domain.page.Contents;
 import lombok.AllArgsConstructor;
@@ -33,6 +36,7 @@ public class Sharing extends Contents {
 
     String image;
     String content;
+<<<<<<< HEAD
 
     public Sharing(SharingRequestDto sharingRequestDto){
         this.category = sharingRequestDto.getCategory();
@@ -56,4 +60,6 @@ public class Sharing extends Contents {
         this.deadLine = sharing.getDeadLine();
         this.image = sharing.getImage();
     }
+=======
+>>>>>>> main
 }

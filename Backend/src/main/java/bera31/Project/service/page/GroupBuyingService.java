@@ -3,6 +3,7 @@ package bera31.Project.service.page;
 
 import bera31.Project.domain.dto.requestdto.GroupBuyingRequestDto;
 import bera31.Project.domain.dto.responsedto.GroupBuyingListResponseDto;
+import bera31.Project.domain.dto.responsedto.GroupBuyingResponseDto;
 import bera31.Project.domain.page.groupbuying.GroupBuying;
 import bera31.Project.repository.page.GroupBuyingRepository;
 import lombok.RequiredArgsConstructor;
@@ -37,7 +38,11 @@ public class GroupBuyingService {
         return savedGroupBuying.getId();
     }
 
-    public Long updateGroupBuying(GroupBuyingRequestDto groupBuyingRequestDto, Long postId){
+    public Long updateGroupBuying(GroupBuyingRequestDto groupBuyingRequestDto, Long postId) {
         return groupBuyingRepository.findById(postId).update(groupBuyingRequestDto);
+    }
+
+    public GroupBuyingResponseDto findGroupBuying(Long postId) {
+        return new GroupBuyingResponseDto(groupBuyingRepository.findById(postId));
     }
 }
