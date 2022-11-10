@@ -36,7 +36,7 @@ public class Sharing extends Contents {
 
     public Sharing(SharingRequestDto sharingRequestDto){
         this.category = sharingRequestDto.getCategory();
-        this.product = sharingRequestDto.getCategory();
+        this.product = sharingRequestDto.getProduct();
         this.expiry =  sharingRequestDto.getExpiry();
         this.deadLine = sharingRequestDto.getDeadLine();
         this.isFinish = false;

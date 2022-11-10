@@ -8,7 +8,6 @@ import bera31.Project.repository.page.SharingRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -19,18 +18,16 @@ import java.util.stream.Collectors;
 public class SharingService {
     private final SharingRepository sharingRepository;
 
-    public void postSharing(@RequestBody SharingRequestDto sharingRequestDto){
+    public void postSharing(SharingRequestDto sharingRequestDto){
         Sharing sharing = new Sharing(sharingRequestDto);
         sharingRepository.save(sharing);
     }
 
-    @Transactional
     public void updateSharing(Long id, SharingRequestDto sharingRequestDto){
         Sharing findSharing = sharingRepository.findById(id);
         findSharing.updateSharing(sharingRequestDto);
     }
 
-    @Transactional
     public void deleteSharing(Long id){
         Sharing sharing = sharingRepository.findById(id);
         sharingRepository.delete(sharing);
@@ -45,8 +42,8 @@ public class SharingService {
 
     @Transactional(readOnly = true)
     public SharingResponseDto findSharing(Long id){
-        SharingResponseDto sharing = sharingRepository.detail(id);
-        return sharing;
+        Sharing sharing = sharingRepository.detail(id);
+        return new SharingResponseDto(sharing);
     }
 
 }

@@ -32,6 +32,7 @@ public class SharingResponseDto {
         this.title = sharing.getTitle();
         this.content = sharing.getContent();
         this.category = sharing.getCategory();
+        this.product = sharing.getProduct();
         this.location = sharing.getLocation();
         this.deadLine = sharing.getDeadLine();
         this.postTime = sharing.getPostTime();
