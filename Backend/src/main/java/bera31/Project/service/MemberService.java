@@ -1,7 +1,6 @@
 package bera31.Project.service;
 
 import bera31.Project.domain.Address;
-import bera31.Project.domain.ingredient.Ingredient;
 import bera31.Project.repository.IngredientRepository;
 import bera31.Project.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
