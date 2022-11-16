@@ -1,7 +1,7 @@
 .pictureArea {
   width: 54rem;
   height: 15.75rem;
-  background-color: #FFEDCC;
+  background-color: var(--sub_orange);
 }
 
 .main_container {
@@ -19,6 +19,6 @@
 .main_sharingBtn, .main_groupBuyingBtn, .main_dutchPayBtn {
   width: 16.875rem;
   height: 16.875rem;
-  background-color: #FFEDCC;
+  background-color: var(--sub_orange);
   border-radius: 0.3125rem;
 }

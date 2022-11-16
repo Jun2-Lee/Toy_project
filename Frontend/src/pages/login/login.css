@@ -1,0 +1,141 @@
+.App {
+ 
+  background-color: #FFFAF3;
+  
+  height: 732px;
+  text-align: center;
+  font-family: "NanumSquareRoundL";
+}
+
+#txtid{
+  position:absolute;
+  font-weight: bolder;
+  font-size: 12px;
+  margin-left: 606px;
+  margin-top: 179px;
+}
+
+#txtpassword{
+  position: absolute;
+  font-weight: bolder;
+  font-size: 12px;
+  margin-left: 606px;
+  margin-top: 245px;
+}
+
+#find {
+  margin-top: 386px;
+  color:#737373;
+  font-size:10px;
+  font-weight: 700;
+  position:absolute;
+  margin-left: 800px;
+  
+
+}
+#Join {
+  margin-top: 386px;
+  color:#737373;
+  font-size:10px;
+  font-weight: 700;
+  position:absolute;
+  margin-left: 878px;
+}
+
+
+
+
+#btn {
+  position:absolute;
+  margin-left: -160px;
+  margin-top:330px;
+  width: 320px;
+  height: 37px;
+  border-radius: 5px;
+  border-color:#FF8327;
+  font-weight: 800;
+  color:white;
+  font-size: 12px;
+  background-color: #FF8327;
+  border:0;
+  outline:0;
+}
+
+#ID {
+   position:absolute;
+   margin-left: -160px;
+   margin-top:197px ;
+   width: 314px;
+   height: 35px;
+   border-radius: 5px;
+   border-color: #FFEDCC;
+   text-align: center;
+   background-color: #FFEDCC;
+   border:0;
+   outline:0;
+   
+}
+
+#password {
+  border:0;
+  outline:0;
+  position:absolute;
+  margin-left: -160px;
+  margin-top: 263px;
+  width: 314px;
+  height: 35px;
+  border-color: #FFEDCC;
+  border-radius: 5px;
+  text-align: center;
+  
+  background-color: #FFEDCC;
+}
+
+#naverlog {
+  position:absolute;
+  margin-left: -137px;
+  margin-top: 471px;
+  width: 272px;
+  height: 35px;
+  background-color: #2DB400;
+  border-color: #FFEDCC;
+  border-radius: 5px;
+  color:white;
+  font-weight: 800;
+  font-size: 12px;
+  border:0;
+  outline:0;
+
+}
+
+#kakaolog {
+  border-color: #FFEDCC;
+  border-radius: 5px;
+  position:absolute;
+  margin-left: -137px;
+  margin-top: 514px;
+  width: 272px;
+  height: 35px;
+  color:black;
+  font-weight: 800;
+  font-size: 12px;
+  background-color: #F9E000;
+  border:0;
+  outline:0;
+}
+
+#ggllog {
+  border-color: #FFEDCC;
+  border-radius: 5px;
+  color:white;
+  font-weight: bold;
+  font-size: 12px;
+  position:absolute;
+  margin-left: -137px;
+  margin-top: 557px;
+  width: 272px;
+  height: 35px;
+  background-color: #8A8D92;
+  border:0;
+  outline:0;
+}
