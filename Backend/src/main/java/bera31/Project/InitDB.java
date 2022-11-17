@@ -29,7 +29,7 @@ public class InitDB {
 
 
         public void dbInit1() {
-
+            System.out.println("Hellow worldl dlwd");
         }
     }
 }

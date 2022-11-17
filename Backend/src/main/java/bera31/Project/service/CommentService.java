@@ -30,7 +30,6 @@ public class CommentService {
         Comment parent = commentRepository.findById(commentId);
         //Comment comment = new Comment(commentRequestDto, 멤버, parent);
         //parent.addChild(comment);
-        
         return 1l;
     }
 

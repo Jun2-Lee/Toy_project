@@ -5,6 +5,7 @@ build/
 !**/src/main/**/build/
 !**/src/test/**/build/
 .DS_Store
+Users/lee/Desktop/Project/Toy_project/Backend/src/main/java/bera31/Project/InitDB.java
 
 ### STS ###
 .apt_generated
