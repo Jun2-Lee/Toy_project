@@ -1,5 +1,7 @@
 package bera31.Project;
 
+import bera31.Project.domain.member.Member;
+import bera31.Project.domain.page.dutchpay.DutchPay;
 import bera31.Project.service.ScheduleService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
@@ -29,7 +31,9 @@ public class InitDB {
 
 
         public void dbInit1() {
-            System.out.println("오리지널");
+            Member member = new Member();
+            member.setNickname("심진섭");
+
         }
     }
 }

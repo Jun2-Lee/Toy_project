@@ -1,7 +1,6 @@
 package bera31.Project.service;
 
 import bera31.Project.domain.Address;
-import bera31.Project.repository.IngredientRepository;
 import bera31.Project.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -13,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 @Transactional
 public class MemberService {
     private final MemberRepository memberRepository;
-    private final IngredientRepository ingredientRepository;
 
     public void changePassword(@RequestBody String password) {
         //멤버 찾기(로그인 구현 후에 할 예정)
