@@ -3,11 +3,19 @@ package bera31.Project.domain.dto.responsedto;
 import bera31.Project.domain.Address;
 import bera31.Project.domain.member.Member;
 import bera31.Project.domain.page.sharing.Sharing;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
-
+@Builder
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
 public class SharingListResponseDto {
 
     String nickname;
