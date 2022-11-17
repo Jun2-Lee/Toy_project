@@ -53,4 +53,8 @@ public class GroupBuyingService {
         //            있으면 ==> member.remove 함수 실행
         groupBuyingRepository.findById(postId);
     }
+
+    public void deleteGroupBuying(Long postId) {
+        groupBuyingRepository.delete(groupBuyingRepository.findById(postId));
+    }
 }
