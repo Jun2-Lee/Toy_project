@@ -42,8 +42,7 @@ public class SharingService {
 
     @Transactional(readOnly = true)
     public SharingResponseDto findSharing(Long id){
-        Sharing sharing = sharingRepository.detail(id);
-        return new SharingResponseDto(sharing);
+        return new SharingResponseDto(sharingRepository.findById(id));
     }
 
 }

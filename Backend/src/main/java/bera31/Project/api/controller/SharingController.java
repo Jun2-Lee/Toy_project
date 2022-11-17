@@ -21,9 +21,9 @@ public class SharingController {
         return sharingService.findAllSharing();
     }
 
-    @GetMapping("/api/sharing/{id}")
-    public SharingResponseDto findSharing(@PathVariable long id){
-        return sharingService.findSharing(id);
+    @GetMapping("/api/sharing/{sharingId}")
+    public SharingResponseDto findSharing(@PathVariable long sharingId){
+        return sharingService.findSharing(sharingId);
     }
 
     @PostMapping("/api/sharing")

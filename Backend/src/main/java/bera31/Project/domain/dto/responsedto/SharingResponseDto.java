@@ -3,10 +3,12 @@ package bera31.Project.domain.dto.responsedto;
 import bera31.Project.domain.Address;
 import bera31.Project.domain.comment.Comment;
 import bera31.Project.domain.page.sharing.Sharing;
+import lombok.Getter;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
+@Getter
 public class SharingResponseDto {
 
     Long id;

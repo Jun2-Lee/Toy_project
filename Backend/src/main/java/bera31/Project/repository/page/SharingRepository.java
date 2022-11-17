@@ -33,11 +33,4 @@ public class SharingRepository {
                 .setParameter("id", id)
                 .getSingleResult();
     }
-
-    public Sharing detail(long id){
-        Sharing sharing = em.createQuery("select s from Sharing s where s.id =:id",Sharing.class)
-                .setParameter("id", id)
-                .getSingleResult();
-        return sharing;
-    }
 }
