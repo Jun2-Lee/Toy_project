@@ -1,9 +1,11 @@
 package bera31.Project.domain.dto.responsedto;
 
 import bera31.Project.domain.page.groupbuying.GroupBuying;
+import lombok.Getter;
 
 import java.time.LocalDateTime;
 
+@Getter
 public class GroupBuyingResponseDto {
     Long id;
     String title;
