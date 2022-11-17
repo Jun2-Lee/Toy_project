@@ -1,5 +1,6 @@
 package bera31.Project.api.controller;
 
+import bera31.Project.domain.dto.requestdto.SharingRequestDto;
 import bera31.Project.domain.dto.responsedto.SharingListResponseDto;
 import bera31.Project.domain.dto.responsedto.SharingResponseDto;
 import bera31.Project.service.page.SharingService;
@@ -19,18 +20,14 @@ public class SharingController {
         return sharingService.findAllSharing();
     }
 
-    @GetMapping("/api/sharingPosts/{id}")
+    @GetMapping("/api/sharing/{id}")
     public SharingResponseDto findSharing(@PathVariable long id){
         return sharingService.findSharing(id);
     }
-    @PostMapping("/api/sharingPosts")
-    public String createSharing() {
-        return "ok";
-    }
 
-    @GetMapping("/api/sharingPosts")
-    public String sharingPosts() {
-        return "ok";
+    @PostMapping("/api/sharing")
+    public void createSharing(@RequestBody SharingRequestDto sharingRequestDto) {
+        sharingService.postSharing(sharingRequestDto);
     }
 
     @GetMapping("/api/sharingPosts/search")
