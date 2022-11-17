@@ -29,8 +29,7 @@ public class SharingService {
     }
 
     public void deleteSharing(Long id){
-        Sharing sharing = sharingRepository.findById(id);
-        sharingRepository.delete(sharing);
+        sharingRepository.delete(sharingRepository.findById(id));
     }
 
     @Transactional(readOnly = true)
