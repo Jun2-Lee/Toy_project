@@ -29,6 +29,7 @@ public class InitDB {
 
 
         public void dbInit1() {
+            System.out.println("밥 줘 ");
         }
     }
 }
