@@ -4,17 +4,15 @@ import bera31.Project.domain.Address;
 import bera31.Project.domain.member.Member;
 import bera31.Project.domain.page.Contents;
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.experimental.SuperBuilder;
+
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.util.List;
 
-@Data
 @Entity
-@SuperBuilder
+@Getter
 @AllArgsConstructor
 @NoArgsConstructor
 public class Sharing extends Contents {
