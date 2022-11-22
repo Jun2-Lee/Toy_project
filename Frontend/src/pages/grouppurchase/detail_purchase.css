@@ -1,0 +1,136 @@
+.App {
+    flex: auto;
+    background-color: #FFFAF3;
+    height: 1455px;
+    width: 100%;
+    top: 87px;
+    border-radius: 0px;
+    position:absolute;
+    font-family: "NanumSquareRoundL";
+  }
+  
+  .main {
+    text-align: center;
+    height: 42px;
+    width: 833px;
+    border-radius: 5px;
+    position:absolute;
+    background-color: #FFEDCC;
+    margin-left: 160px;
+    margin-top: 33px;
+    
+  }
+  
+  #title {
+    position:absolute;
+    margin-top:13px;
+    font-size: 16px;
+    font-weight: 400px;
+    margin-left: 388px;
+    font-weight:bolder;
+  }
+  
+  #modify {
+    position:absolute;
+     font-size:12px;
+     font-weight:bolder;
+     border:0;
+     outline:0;
+     margin-left: 290px;
+     margin-top: 70px;
+     background-color: #FFFAF3;
+  }
+  
+  #delete {
+    background-color: #FFFAF3;
+    position:absolute;
+    font-size:12px;
+    font-weight: 700px;
+    border:0;
+    outline:0;
+    margin-left: 350px;
+    margin-top: 70px;
+    font-weight:bolder;
+  }
+  
+  #nowTime {
+    position:absolute;
+    margin-top: 120px;
+    margin-left: 883px;
+  }
+  
+  
+  .profileImg {
+    position:absolute;
+    margin-top: 100px;
+    margin-left: -408px;
+  }
+  
+  .main2 {
+    text-align: center;
+    border-radius: 5px;
+    background-color: white;
+    position: absolute;
+    height: 312px;
+    width: 312px;
+    margin-left: 285px;
+    margin-top:200px;
+  }
+  
+  #name{
+    position: absolute;
+    margin-left: 610px;
+    margin-top: 165px;
+    font-size: 16px;
+    font-weight:bolder;
+  }
+  
+  #state {
+    position: absolute;
+    font-size: 16px;
+    font-weight:bolder;
+    margin-top: 530px;
+    margin-left: 295px;
+  }
+  
+  
+  .showState{
+    border-radius: 5px;
+    position: absolute;
+    background-color: #FFEDCC;
+    text-align: center;
+    height: 128px;
+    width: 580px;
+    margin-left: 285px;
+    margin-top:568px;
+  
+  }
+  
+  
+  #like {
+    width: 70px;
+    height: 50px;
+    position: absolute;
+    background-color: #FFEDCC;
+    border-radius: 5px;
+    border:0;
+    outline:0;
+    margin-left: -415px;
+    margin-top: 750px;
+    font-weight: bolder;
+  }
+  
+  #application{
+    width: 97px;
+    height: 50px;
+    position: absolute;
+    background-color:  #FF8327;
+    border:0;
+    outline:0;
+    margin-top: 750px;
+    border-radius: 5px;
+    font-weight: bolder;
+    color:white;
+    margin-left: 330px;
+  }
+  

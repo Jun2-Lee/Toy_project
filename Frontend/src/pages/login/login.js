@@ -10,7 +10,7 @@ function Login() {
 
   return (
     <div className="App">
-      <div className='main'>
+      
       
         <p  id ="txtid">아이디</p>
         <input type  = "text" id = "ID"/><br/>
@@ -28,7 +28,7 @@ function Login() {
         <button id = 'kakaolog'> 카카오로 로그인 </button>
         <button id = 'ggllog'> 구글로 로그인 </button>
       </div>
-    </div>
+
     
 
   )
