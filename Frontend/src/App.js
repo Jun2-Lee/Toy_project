@@ -7,6 +7,9 @@ import Main from './pages/main';
 import InitialInfo from './pages/initial_info/initial_info'
 import Signup from './pages/signup';
 import PostSharing from './pages/post/post_sharing'
+import SharingPage from './pages/sharing';
+import DutchPayPage from './pages/dutchpay';
+import GroupBuyingPage from './pages/groupbuying';
 import Login from './pages/login/login'
 import DetailSharing from './pages/detail/detail_sharing'
 import DetailPurchase from './pages/grouppurchase/detail_purchase';
@@ -27,12 +30,14 @@ function App() {
             <Route path='/signup' element={<Signup/>} />
             <Route path='/detailSharing' element={<DetailSharing/>} />
             <Route path='/postSharing' element={<PostSharing/>} />
+            <Route path='/sharing' element={<SharingPage/>} />
+            <Route path='/dutchPay' element={<DutchPayPage/>} />
+            <Route path='/groupBuying' element={<GroupBuyingPage/>} />
             <Route path='/detailPurchase' element={<DetailPurchase/>}/>
             <Route path='/postDelivery' element={<PostDelivery/>} />
             <Route path='/postGroupBuying' element={<PostgroupBuying/>} />
           </Routes>
         </Router>
-
       </div>
     </div>
   );
