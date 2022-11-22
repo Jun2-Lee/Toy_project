@@ -10,9 +10,9 @@ import java.time.LocalDateTime;
 
 @Getter
 @AllArgsConstructor
+@NoArgsConstructor
 public class GroupBuyingRequestDto {
     String title;
-    String ingredient;
     String category;
     String product;
     String link;

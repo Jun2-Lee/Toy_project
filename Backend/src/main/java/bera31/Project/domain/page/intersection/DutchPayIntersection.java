@@ -20,5 +20,4 @@ public class DutchPayIntersection {
     @ManyToOne
     @JoinColumn(name = "CONTENTS_ID")
     DutchPay dutchPay;
-
 }
