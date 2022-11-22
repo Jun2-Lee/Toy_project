@@ -36,5 +36,4 @@ public class SharingController {
     public String deleteSharing(@PathVariable String sharingId) {
         return "ok";
     }
-
 }

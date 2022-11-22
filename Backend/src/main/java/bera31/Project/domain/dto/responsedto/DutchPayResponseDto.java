@@ -2,14 +2,17 @@ package bera31.Project.domain.dto.responsedto;
 
 import bera31.Project.domain.page.dutchpay.Category;
 import bera31.Project.domain.page.dutchpay.DutchPay;
+import lombok.Getter;
 
+import javax.swing.text.Style;
 import java.time.LocalDateTime;
 
+@Getter
 public class DutchPayResponseDto {
 
     Long id;
     String store;
-    Category category;
+    String category;
     int deliveryCost;
     int limitMember;
     double x;

@@ -16,7 +16,7 @@ import java.time.LocalDateTime;
 public class DutchPayListResponseDto {
     Long id;
     String store;
-    Category category;
+    String category;
     int deliveryCost;
     int currentMember;
     int limitMember;

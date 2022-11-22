@@ -16,7 +16,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class DutchPay extends Contents {
-    Category category;
+    String category;
     String store;
     int deliveryCost;
     int limitMember;
@@ -29,7 +29,7 @@ public class DutchPay extends Contents {
     LocalDateTime deadLine;
     String content;
 
-    public DutchPay(String title, Category category, String store, int deliveryCost,
+    public DutchPay(String title, String category, String store, int deliveryCost,
                     int limitMember, String content, double x, double y, LocalDateTime deadLine) {
         this.title = title;
         this.category = category;
@@ -40,5 +40,6 @@ public class DutchPay extends Contents {
         this.y = y;
         this.deadLine = deadLine;
         this.content = content;
+        this.postTime = LocalDateTime.now();
     }
 }
