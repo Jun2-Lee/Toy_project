@@ -11,6 +11,7 @@ import Login from './pages/login/login'
 import DetailSharing from './pages/detail/detail_sharing'
 import DetailPurchase from './pages/grouppurchase/detail_purchase';
 import PostDelivery from './pages/post/post_delivery';
+import PostgroupBuying from './pages/post/post_groupBuying'
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
             <Route path='/postSharing' element={<PostSharing/>} />
             <Route path='/detailPurchase' element={<DetailPurchase/>}/>
             <Route path='/postDelivery' element={<PostDelivery/>} />
+            <Route path='/postGroupBuying' element={<PostgroupBuying/>} />
           </Routes>
         </Router>
 
