@@ -1,6 +1,7 @@
 package bera31.Project.repository;
 
 import bera31.Project.domain.comment.Comment;
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
@@ -33,5 +34,4 @@ public class CommentRepository {
                 .setParameter("id", id)
                 .getSingleResult();
     }
-
 }

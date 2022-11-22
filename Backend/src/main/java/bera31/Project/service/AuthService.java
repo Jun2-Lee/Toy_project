@@ -26,8 +26,7 @@ public class AuthService {
             throw new Exception("이미 있는 닉네임입니다");
         }
 
-        Member member = signUpDto.toMember();
-        memberRepository.save(member);
+        //memberRepository.save(member);
         return;
     }
 
