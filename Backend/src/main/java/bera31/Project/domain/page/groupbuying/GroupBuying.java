@@ -4,7 +4,7 @@ import bera31.Project.domain.dto.requestdto.GroupBuyingRequestDto;
 import bera31.Project.domain.page.Contents;
 import bera31.Project.domain.page.intersection.GroupBuyingIntersection;
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
@@ -15,7 +15,7 @@ import java.util.List;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
+@Getter
 public class GroupBuying extends Contents {
     String link;
     String category; //////////

@@ -5,18 +5,14 @@ import bera31.Project.domain.comment.ChildComment;
 import bera31.Project.domain.comment.Comment;
 import bera31.Project.domain.member.Member;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.experimental.SuperBuilder;
-
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-@SuperBuilder
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
