@@ -45,4 +45,9 @@ public class GroupBuyingController {
     public void addFavoriteGroupBuying(@PathVariable Long postId){
         groupBuyingService.updateFavoriteGroupBuying(postId);
     }
+
+    @DeleteMapping("/api/groupBuying/{postId}")
+    public void deleteGroupBuying(@PathVariable Long postId){
+        groupBuyingService.deleteGroupBuying(postId);
+    }
 }
