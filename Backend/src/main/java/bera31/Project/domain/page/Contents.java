@@ -6,7 +6,7 @@ import bera31.Project.domain.comment.Comment;
 import bera31.Project.domain.member.Member;
 import lombok.AllArgsConstructor;
 
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -16,7 +16,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Data
+@Getter
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public abstract class Contents {
     @Id
