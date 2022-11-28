@@ -1,135 +1,142 @@
-.App {
-  text-align: center;
-  background-color: #FFFAF3;
-  height: 1455px;
-  width: 100%;
-  top: 87px;
-  border-radius: 0px;
-  position:absolute;
-  font-family: "NanumSquareRoundL";
-}
-
-.main {
-  text-align: center;
+.sharingdetail_Title {
+  background-color: var(--sub_orange);
+  font-size: 16px;
+  font-weight:bolder;
   height: 42px;
   width: 833px;
   border-radius: 5px;
-  position:absolute;
-  background-color: #FFEDCC;
-  margin-left: 160px;
-  margin-top: 33px;
+  margin-top: -25px;
+}
+
+#sharingdetail_title{
+  display: flex;
+  justify-content: center;
+  margin-top: -30px;
+  line-height: 47px;
+}
+
+
+.userhelp_sharedetail{
+  margin-top: 10px;
+  margin-left: 720px;
+
+}
+
+.component_sharing{
+
+  display: flex;
+}
+
+.items_sharing{
+  flex-direction: column;
+  margin-left: 50px;
+ 
+}
+
+.categorySharing, .itemSharing ,.expirySharing, .DeadlineSharing{
+  background-color: var(--sub_orange);
+  border: none;
+  width: 147px;
+  height: 42px;
+  margin-left: 13px;
+  border-radius: 5px;
+  margin-bottom: 50px;
+}
+
+.category_sharing, .item_sharing,.expiry_sharing,.deadline_sharing{
+  display: flex;
+
+}
+
+.detailform_sharing{
+  text-align: center;
+  width: 100px;
+  margin-top: 5px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight:bolder;
+  margin-left: -25px;
+
+}
+
+
+
+
+.modify_sharing, .delete_sharing{
+     font-size:12px;
+     font-weight:bolder;
+     border:0;
+     outline:0; 
+     background-color: #FFFAF3;
+  }
+
+
+
+  .sharedetailImg{
+    background-color: white;
+    width: 312px;
+    height: 312px;
+    margin-left: 120px
+
+
+  }
   
-}
+  .profile {
+    margin-top: 100px;
+    margin-left: -408px;
+  }
 
-#title {
-  position:absolute;
-  margin-top:13px;
-  font-size: 16px;
-  font-weight: 400px;
-  margin-left: 388px;
-  font-weight:bolder;
-}
+  
+  .Ingredient_sharing {
+    background-color: var(--sub_orange);
+    border: none;
+    border-radius: 5px;
+    height: 128px;
+    width: 597px;
+    display: flex;
 
-#modify {
-  position:absolute;
-   font-size:12px;
-   font-weight:bolder;
-   border:0;
-   outline:0;
-   margin-left: 290px;
-   margin-top: 70px;
-   background-color: #FFFAF3;
-}
+  }
 
-#delete {
-  background-color: #FFFAF3;
-  position:absolute;
-  font-size:12px;
-  font-weight: 700px;
-  border:0;
-  outline:0;
-  margin-left: 350px;
-  margin-top: 70px;
-  font-weight:bolder;
-}
+  #Ingredient_sharing{
+    margin-top: 50px;
+    font-size: 16px;
+    font-weight:bolder;
+    margin-top: 30px;
+    display: flex;
+    margin-left: 130px;
+  }
 
-#nowTime {
-  position:absolute;
-  margin-top: 120px;
-  margin-left: 883px;
-}
+  .Ingredient_sharing{
+    margin-left: 120px;
+   
+  }
+  
+  .LowerUserHelp_sharing{
+    margin-top: 60px;
+  }
 
+  .shareLike{
+    border:0;
+    outline:0; 
+    background-color: var(--sub_orange);
+    font-size: 16px;
+    font-weight:bolder;
+    margin-left: 0px;
+    width: 70px;
+    height: 50px;
+    border-radius: 5px;
+  }
 
-.profileImg {
-  position:absolute;
-  margin-top: 100px;
-  margin-left: -408px;
-}
+  .shareApplication{
 
-.main2 {
-  text-align: center;
-  border-radius: 5px;
-  background-color: white;
-  position: absolute;
-  height: 312px;
-  width: 312px;
-  margin-left: 285px;
-  margin-top:200px;
-}
-
-#name{
-  position: absolute;
-  margin-left: 610px;
-  margin-top: 165px;
-  font-size: 16px;
-  font-weight:bolder;
-}
-
-#state {
-  position: absolute;
-  font-size: 16px;
-  font-weight:bolder;
-  margin-top: 530px;
-  margin-left: 295px;
-}
-
-
-.showState{
-  border-radius: 5px;
-  position: absolute;
-  background-color: #FFEDCC;
-  text-align: center;
-  height: 128px;
-  width: 580px;
-  margin-left: 285px;
-  margin-top:568px;
-
-}
-
-
-#like {
-  width: 70px;
-  height: 50px;
-  position: absolute;
-  background-color: #FFEDCC;
-  border-radius: 5px;
-  border:0;
-  outline:0;
-  margin-left: -415px;
-  margin-top: 750px;
-  font-weight: bolder;
-}
-
-#application{
-  width: 97px;
-  height: 50px;
-  position: absolute;
-  background-color:  #FF8327;
-  border:0;
-  outline:0;
-  margin-top: 750px;
-  border-radius: 5px;
-  font-weight: bolder;
-  color:white;
-  margin-left: 330px;
-}
+    border:0;
+    outline:0; 
+    background-color:  #FF8327;
+    font-size: 16px;
+    font-weight:bolder;
+    color: white;
+    margin-left: 670px;
+    width: 97px;
+    height: 50px;
+    border-radius: 5px;
+  }
