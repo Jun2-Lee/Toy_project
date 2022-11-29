@@ -5,39 +5,40 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
+@RequestMapping("/api/members")
 public class MemberController {
 
-    @GetMapping("/api/members")
+    @GetMapping
     public String getMemberInfo() {
         return "ok";
     }
 
-    @PostMapping("/api/members/logout")
+    @PostMapping("/logout")
     public String logout() {
         return "ok";
     }
 
-    @PutMapping("/api/members/address")
+    @PutMapping("/address")
     public String changeAddress() {
         return "ok";
     }
 
-    @PutMapping("/api/members/password")
+    @PutMapping("/password")
     public String changePassword() {
         return "ok";
     }
 
-    @PutMapping("/api/members/food")
+    @PutMapping("/food")
     public String changeFood() {
         return "ok";
     }
 
-    @DeleteMapping("/api/members")
+    @DeleteMapping
     public String deleteMember() {
         return "ok";
     }
 
-    @PutMapping("/api/members/photo")
+    @PutMapping("/photo")
     public String changeProfile() {
         return "ok";
     }
