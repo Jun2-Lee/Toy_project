@@ -1,9 +1,9 @@
 spring:
   datasource:
-    url: jdbc:h2:tcp://localhost/~/naong
-    username: sa
-    password:
-    driver-class-name: org.h2.Driver
+    url: jdbc:mariadb://naong-db.c8o7rl2nwppm.ap-northeast-2.rds.amazonaws.com:3306/naongdb
+    username: admin
+    password: criteria123!
+    driver-class-name: org.mariadb.jdbc.Driver
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher
