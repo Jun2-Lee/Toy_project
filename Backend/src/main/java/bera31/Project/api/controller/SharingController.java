@@ -11,36 +11,37 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
+@RequestMapping("/api/sharing")
 public class SharingController {
 
     private final SharingService sharingService;
 
-    @GetMapping("/api/sharing")
+    @GetMapping
     public List<SharingListResponseDto> findAllSharing(){
         return sharingService.findAllSharing();
     }
 
-    @GetMapping("/api/sharing/{sharingId}")
+    @GetMapping("/{sharingId}")
     public SharingResponseDto findSharing(@PathVariable Long sharingId){
         return sharingService.findSharing(sharingId);
     }
 
-    @PostMapping("/api/sharing")
+    @PostMapping
     public void postSharing(@RequestBody SharingRequestDto sharingRequestDto) {
         sharingService.postSharing(sharingRequestDto);
     }
 
-    @PostMapping("/api/sharing/{sharingId}")
+    @PostMapping("/{sharingId}")
     public void updateSharing(@PathVariable Long sharingId, @RequestBody SharingRequestDto sharingRequestDto) {
         sharingService.updateSharing(sharingId, sharingRequestDto);
     }
 
-    @DeleteMapping("/api/sharing/{sharingId}")
+    @DeleteMapping("/{sharingId}")
     public void deleteSharing(@PathVariable Long sharingId) {
         sharingService.deleteSharing(sharingId);
     }
 
-    @GetMapping("/api/sharingPosts/search")
+    @GetMapping("/search")
     public String searchByKeyword(@RequestParam String keyword) {
         return "ok";
     }

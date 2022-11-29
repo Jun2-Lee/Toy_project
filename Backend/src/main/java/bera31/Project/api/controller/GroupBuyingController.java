@@ -12,41 +12,42 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
+@RequestMapping("/api/groupBuying")
 public class GroupBuyingController {
 
     private final GroupBuyingService groupBuyingService;
 
-    @GetMapping("/api/groupBuying")
+    @GetMapping
     public List<GroupBuyingListResponseDto> findAllGroupBuying() {
         return groupBuyingService.findAllGroupBuying();
     }
 
-    @PostMapping("/api/groupBuying")
+    @PostMapping
     public Long postGroupBuying(@RequestBody GroupBuyingRequestDto groupBuyingRequestDto) {
         return groupBuyingService.postGroupBuying(groupBuyingRequestDto);
     }
 
-    @PostMapping("/api/groupBuying/update/{postId}")
+    @PostMapping("/update/{postId}")
     public Long updateGroupBuying(@RequestBody GroupBuyingRequestDto groupBuyingRequestDto, @PathVariable Long postId) {
         return groupBuyingService.updateGroupBuying(groupBuyingRequestDto, postId);
     }
 
-    @GetMapping("/api/groupBuying/{postId}")
+    @GetMapping("/{postId}")
     public GroupBuyingResponseDto findGroupBuying(@PathVariable Long postId) {
         return groupBuyingService.findGroupBuying(postId);
     }
 
-    @GetMapping("/api/groupBuying/search")
+    @GetMapping("/search")
     public List<GroupBuyingListResponseDto> searchGroupBuying(@RequestParam String keyword) {
         return groupBuyingService.searchGroupBuying(keyword);
     }
 
-    @PostMapping("/api/groupBuying/{postId}/heart")
+    @PostMapping("/{postId}/heart")
     public void addFavoriteGroupBuying(@PathVariable Long postId){
         groupBuyingService.updateFavoriteGroupBuying(postId);
     }
 
-    @DeleteMapping("/api/groupBuying/{postId}")
+    @DeleteMapping("/{postId}")
     public void deleteGroupBuying(@PathVariable Long postId){
         groupBuyingService.deleteGroupBuying(postId);
     }
