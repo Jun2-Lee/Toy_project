@@ -3,7 +3,6 @@
 .body {
     display: flex;
     justify-content: center;
-    margin-top: 46px;
   }
   
   .form-label {
