@@ -12,43 +12,73 @@ import { useRef, useEffect } from "react";
 function DetailSharing() {
   //const nowTime = moment().format('YYYY-MM-DD');
   return(
-  <div className='App'>
-    <div className='main'>
-      <p id = "title">제목</p>
-      
-      <button id = "modify">수정하기</button>
-      <button id = "delete">삭제하기</button>
-    </div>
-   <div id = "nowTime">
-   {/*{nowTime}*/} 
-   </div>
-   <div className = "profile">
-    <img className = "profileImg"  src={default_profile}>
-
-    </img>
-
-    <div className='main2'></div>
     <div>
-      <table>
-        <tr>
-          <td style={{lineHeight:"580%"}} id ="name">
-            카테고리<br/>품목<br/>유통기한<br/>마감일<br/>
-          </td>
-        </tr>
-      </table>
-      <p id = "state">재료 상태</p>
-      <div className="showState"></div>
-      <div>
-        <button id = "like">찜</button>
-        <button id = "application">신청하기</button>
-      </div>
-      </div>
-      
-
-      
+       
+    <div className='sharingdetail_Title'>
+      <p id = "sharingdetail_title">제목</p>
     </div>
-   </div>
 
+    <div className='userhelp_sharedetail'>
+      <button className = "modify_sharing">수정하기</button>
+      <button className = "delete_sharing">삭제하기</button>
+    </div>
+
+
+    <div id = "nowTime">
+    {/*{nowTime}*/ }
+    </div>
+
+    <div className = "profile">
+      <img className = "profileImg"  src={default_profile}>
+      </img>
+    </div>
+
+    <div className='component_sharing'>
+      <div className='sharedetailImg'></div>
+      <div className='items_sharing'>
+                <div className="category_sharing">
+                <label className="detailform_sharing">카테고리</label>
+                <div
+                  className="categorySharing"
+                  />
+              </div>
+              <div className="item_sharing">
+                <label className="detailform_sharing">품목</label>
+                <div
+                  className="itemSharing"
+                  />
+              </div>
+
+              <div className="expiry_sharing">
+                <label className="detailform_sharing">유통기한</label>
+                <div
+                  className="expirySharing"
+                  />
+              </div>
+
+              <div className="deadline_sharing">
+                <label className="detailform_sharing">마감일</label>
+                <div 
+                  className="DeadlineSharing"
+                  />
+            </div>
+            </div>
+        </div>
+
+
+
+    <div className="ingredient_sharing">
+      <label id="Ingredient_sharing">재료상태</label>
+      <br></br>
+    <input className="Ingredient_sharing"/>
+    </div>
+
+    <div className="LowerUserHelp_sharing">
+      <button className = "shareLike">찜</button>
+      <button className = "shareApplication">신청하기</button>
+    </div>    
+
+</div>
 
     
   

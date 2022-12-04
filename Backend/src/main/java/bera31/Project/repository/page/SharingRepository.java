@@ -1,6 +1,5 @@
 package bera31.Project.repository.page;
 
-import bera31.Project.domain.page.groupbuying.GroupBuying;
 import bera31.Project.domain.page.sharing.Sharing;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
@@ -29,7 +28,7 @@ public class SharingRepository {
                 .getResultList();
     }
 
-    public Sharing findById(long id) {
+    public Sharing findById(Long id) {
         return em.createQuery("select s from Sharing s where s.id =:id", Sharing.class)
                 .setParameter("id", id)
                 .getSingleResult();

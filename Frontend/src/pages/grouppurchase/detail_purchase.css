@@ -1,136 +1,149 @@
-.App {
-    flex: auto;
-    background-color: #FFFAF3;
-    height: 1455px;
-    width: 100%;
-    top: 87px;
-    border-radius: 0px;
-    position:absolute;
-    font-family: "NanumSquareRoundL";
-  }
-  
-  .main {
-    text-align: center;
-    height: 42px;
-    width: 833px;
-    border-radius: 5px;
-    position:absolute;
-    background-color: #FFEDCC;
-    margin-left: 160px;
-    margin-top: 33px;
-    
-  }
-  
-  #title {
-    position:absolute;
-    margin-top:13px;
-    font-size: 16px;
-    font-weight: 400px;
-    margin-left: 388px;
-    font-weight:bolder;
-  }
-  
-  #modify {
-    position:absolute;
+
+.detail_Title {
+  background-color: var(--sub_orange);
+  font-size: 16px;
+  font-weight:bolder;
+  height: 42px;
+  width: 833px;
+  border-radius: 5px;
+  margin-top: -25px;
+}
+
+#detail_title{
+  display: flex;
+  justify-content: center;
+  margin-top: -30px;
+  line-height: 47px;
+}
+
+
+.userhelp_detail{
+  margin-top: 10px;
+  margin-left: 720px;
+
+}
+
+
+.modify, .delete{
      font-size:12px;
      font-weight:bolder;
      border:0;
-     outline:0;
-     margin-left: 290px;
-     margin-top: 70px;
+     outline:0; 
      background-color: #FFFAF3;
   }
-  
-  #delete {
-    background-color: #FFFAF3;
-    position:absolute;
-    font-size:12px;
-    font-weight: 700px;
-    border:0;
-    outline:0;
-    margin-left: 350px;
-    margin-top: 70px;
-    font-weight:bolder;
+
+
+
+  .detailImg{
+    background-color: white;
+    width: 312px;
+    height: 312px;
+    margin-left: 120px
+
+
   }
+
+.component_purchase{
+  display: flex;
+
   
-  #nowTime {
-    position:absolute;
-    margin-top: 120px;
-    margin-left: 883px;
-  }
+}
+
+.items_purchase{
+  flex-direction: column;
+  margin-left: 50px;
+ 
+}
+
+.categoryPurchase, .itemPurchase ,.recruitPurchase, .costPurchase ,.DeadlinePurchase{
+  background-color: var(--sub_orange);
+  border: none;
+  width: 147px;
+  height: 42px;
+  margin-left: 13px;
+  border-radius: 5px;
+  margin-bottom: 30px;
+}
+
+.category_purchase, .item_purchase ,.recruit_purchase,.cost_purchase ,.deadline_purchase{
+  display: flex;
+
+}
+
+
+.detailform{
+  text-align: center;
+  width: 100px;
+  margin-top: 5px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight:bolder;
+  margin-left: -25px;
+
+}
+
   
-  
-  .profileImg {
-    position:absolute;
+  .profile {
     margin-top: 100px;
     margin-left: -408px;
   }
+
   
-  .main2 {
-    text-align: center;
+  .IngredientStatus {
+    background-color: var(--sub_orange);
+    border: none;
     border-radius: 5px;
-    background-color: white;
-    position: absolute;
-    height: 312px;
-    width: 312px;
-    margin-left: 285px;
-    margin-top:200px;
-  }
-  
-  #name{
-    position: absolute;
-    margin-left: 610px;
-    margin-top: 165px;
-    font-size: 16px;
-    font-weight:bolder;
-  }
-  
-  #state {
-    position: absolute;
-    font-size: 16px;
-    font-weight:bolder;
-    margin-top: 530px;
-    margin-left: 295px;
-  }
-  
-  
-  .showState{
-    border-radius: 5px;
-    position: absolute;
-    background-color: #FFEDCC;
-    text-align: center;
     height: 128px;
-    width: 580px;
-    margin-left: 285px;
-    margin-top:568px;
-  
+    width: 597px;
+    display: flex;
+
+  }
+  #won {
+    font-size: 16px;
+    font-weight:bolder;
+    margin-top: 7px;
+  }
+
+  #IngredientStatus{
+    margin-top: 50px;
+    font-size: 16px;
+    font-weight:bolder;
+    margin-top: 10px;
+    display: flex;
+    margin-left: 130px;
+  }
+
+  .IngredientStatus{
+    margin-left: 120px;
+   
   }
   
-  
-  #like {
+  .LowerUserHelp{
+    margin-top: 60px;
+  }
+
+  .like{
+    border:0;
+    outline:0; 
+    background-color: var(--sub_orange);
+    font-size: 16px;
+    font-weight:bolder;
+    margin-left: 0px;
     width: 70px;
     height: 50px;
-    position: absolute;
-    background-color: #FFEDCC;
     border-radius: 5px;
-    border:0;
-    outline:0;
-    margin-left: -415px;
-    margin-top: 750px;
-    font-weight: bolder;
   }
-  
-  #application{
+
+  .application{
+
+    border:0;
+    outline:0; 
+    background-color:  #FF8327;
+    font-size: 16px;
+    font-weight:bolder;
+    color: white;
+    margin-left: 670px;
     width: 97px;
     height: 50px;
-    position: absolute;
-    background-color:  #FF8327;
-    border:0;
-    outline:0;
-    margin-top: 750px;
     border-radius: 5px;
-    font-weight: bolder;
-    color:white;
-    margin-left: 330px;
   }
-  
