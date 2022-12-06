@@ -41,6 +41,8 @@ function App() {
             <Route path='/postGroupBuying' element={<PostgroupBuying/>} />
             <Route path='/editProfile' element={<EditProfile/>} />
            <Route path='/myWriting' element={<MyWriting />} />
+            <Route path='/myWriting' element={<MyWriting />} />
+
           </Routes>
         </Router>
       </div>

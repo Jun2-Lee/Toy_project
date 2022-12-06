@@ -24,9 +24,14 @@ function DetailSharing() {
 
 
     <div id = "nowTime">
+<<<<<<< HEAD
 
       {/*{nowTime}*/ }
 
+=======
+      {/*{nowTime}*/ }
+    {/*{nowTime}*/ }
+>>>>>>> c2827a8a5fc44bfd94361badf222ac6389e17468
     </div>
 
     <div className = "profile">
