@@ -2,7 +2,6 @@
 import './detail_sharing.css';
 
 import React  from 'react';
-import default_profile from '../../assets/img/default_profile.png';
 //import moment from 'moment';
 //import 'moment/locale/ko';
 
@@ -26,10 +25,11 @@ function DetailSharing() {
 
     <div id = "nowTime">
       {/*{nowTime}*/ }
+    {/*{nowTime}*/ }
     </div>
 
     <div className = "profile">
-      <img className = "profileImg"  src={default_profile}>
+      <img className = "profileImg"  src='assets/img/default_profile.png'>
       </img>
     </div>
 

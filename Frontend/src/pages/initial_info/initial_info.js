@@ -11,6 +11,20 @@ function InitialInfo() {
     event.preventDefault();
   };
 
+  //파일 미리 볼 url을 저장해줄 state
+  const [fileImage, setFileImage] = useState("");
+
+  // 파일 저장
+  const saveFileImage = (e) => {
+    setFileImage(URL.createObjectURL(e.target.files[0]));
+  };
+
+  // 파일 삭제
+  const deleteFileImage = () => {
+    URL.revokeObjectURL(fileImage);
+    setFileImage("");
+  };
+
   return (
     <div>
       <form onSubmit={handleSubmit}>
@@ -27,10 +41,8 @@ function InitialInfo() {
 
         <div className="profile_upload">
           <label className="form-label">프로필 사진</label>
-          <input 
-            className="profileUpload"
-            />
-          {/*<input type="file" accept="image/*"></input>*/}
+          <div className="profileUpload"></div>
+          <input type="file" accept="image/*" hidden="true" onChange={saveFileImage}></input>  
         </div>
 
         <div className="address">
