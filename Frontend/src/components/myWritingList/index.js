@@ -1,4 +1,5 @@
 import React from 'react';
+import Pagination from '../pagination';
 import './index.css';
 
 function MyWritingList() {
@@ -52,6 +53,7 @@ function MyWritingList() {
         <div className='item_area'>장전동</div>
         <div className='item_deadline'>3일 후 마감</div>
       </div>
+      <div className='myWriting_pagination'> <Pagination /> </div>
     </div>
   )
 }
