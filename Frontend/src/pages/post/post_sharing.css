@@ -3,7 +3,6 @@
 .body {
     display: flex;
     justify-content: center;
-    margin-top: 46px;
   }
   
   .form-label {
@@ -61,8 +60,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-left: 80px;
-    margin-bottom: 60px;
   }
   
   .post_sharing {
@@ -73,5 +70,6 @@
     border: none;
     color: white;
     font-weight: 800;
-    margin-top: 80px;
+    margin-top: 27px;
+    margin-bottom: 46px;
   }
