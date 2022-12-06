@@ -43,3 +43,10 @@
 .myWriting_list .item_date {
   text-align: right;
 }
+
+.myWriting_pagination {
+  grid-column: 2 / 3;
+  display: grid;
+  text-align: center;
+  align-content: center;
+} 

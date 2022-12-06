@@ -39,3 +39,18 @@
 .groupbuying_list .item_date {
   text-align: right;
 }
+
+.groupBuying_pagination {
+  grid-column: 2 / 3;
+  display: grid;
+  text-align: center;
+  align-content: center;
+} 
+
+.writing {
+  text-align: right;
+}
+
+.writingIcon {
+  width: 2.813rem;
+}
