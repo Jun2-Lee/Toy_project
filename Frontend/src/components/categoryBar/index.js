@@ -26,7 +26,7 @@ function CategoryBar() {
       }}>
           카테고리
       </div>
-      <div>
+      <div className='sideBar'>
         <ul className='category'> 
           <div onClick={()=>handleOpenToggle(0)}>
             곡물

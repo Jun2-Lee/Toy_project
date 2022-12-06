@@ -9,7 +9,7 @@
   padding-top: 2.25rem;
 }
 
-.item {
+.sharing_list .item {
   background-color: var(--main_orange);
   width: 11.875rem;
   height: 16.438rem;
@@ -23,7 +23,7 @@
   box-shadow: 0 0.125rem 0.188rem 0 rgba(0, 0, 0, 0.25)
 }
 
-.item_image, .item_title, .item_area, .item_deadline {
+.sharing_list .item_image, .sharing_list .item_title, .sharing_list .item_area, .sharing_list .item_deadline {
   background-color: white;
   border-radius: 0.346rem;
   text-align: center;
@@ -32,10 +32,25 @@
   justify-content: center;
 }
 
-.item_image, .item_title {
+.sharing_list .item_image, .sharing_list .item_title {
   grid-column: 1 / 3;
 }
 
-.item_date {
+.sharing_list .item_date {
   text-align: right;
+}
+
+.sharing_pagination {
+  grid-column: 2 / 3;
+  display: grid;
+  text-align: center;
+  align-content: center;
+} 
+
+.writing {
+  text-align: right;
+}
+
+.writingIcon {
+  width: 2.813rem;
 }
