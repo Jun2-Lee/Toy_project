@@ -24,6 +24,7 @@ function DetailSharing() {
 
 
     <div id = "nowTime">
+      {/*{nowTime}*/ }
     {/*{nowTime}*/ }
     </div>
 
