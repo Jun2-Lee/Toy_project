@@ -1,7 +1,5 @@
 import './profile_edit.css';
 import {useState} from 'react';
-import bigLogo from '../../assets/img/bigLogo.png';
-import union from '../../assets/img/union.png';
 import {BrowserRouter as Router, Route,  Link} from "react-router-dom";
 
 
@@ -16,7 +14,7 @@ function EditProfile() {
 
     return (
         <div >
-            <div className="biglogo"><img className="bigDefaultImg" src={bigLogo}/></div>
+            <div className="biglogo"><img className="bigDefaultImg" src="assets/img/bigLogo.png"/></div>
 
             <div className='editID'>
                 <label className='id-label'>아이디</label>
