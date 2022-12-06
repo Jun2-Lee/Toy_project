@@ -9,7 +9,7 @@
   padding-top: 2.25rem;
 }
 
-.item {
+.groupbuying_list .item {
   background-color: var(--main_orange);
   width: 11.875rem;
   height: 16.438rem;
@@ -23,7 +23,7 @@
   box-shadow: 0 0.125rem 0.188rem 0 rgba(0, 0, 0, 0.25)
 }
 
-.item_image, .item_title, .item_area, .item_deadline {
+.groupbuying_list .item_image,.groupbuying_list .item_title, .groupbuying_list .item_area, .groupbuying_list .item_deadline {
   background-color: white;
   border-radius: 0.346rem;
   text-align: center;
@@ -32,10 +32,10 @@
   justify-content: center;
 }
 
-.item_image, .item_title {
+.groupbuying_list .item_image, .groupbuying_list .item_title {
   grid-column: 1 / 3;
 }
 
-.item_date {
+.groupbuying_list .item_date {
   text-align: right;
 }
