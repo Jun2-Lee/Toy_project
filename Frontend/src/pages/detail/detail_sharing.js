@@ -12,10 +12,12 @@ function DetailSharing() {
   //const nowTime = moment().format('YYYY-MM-DD');
   return(
     <div>
-       
+    
+
     <div className='sharingdetail_Title'>
       <p id = "sharingdetail_title">제목</p>
     </div>
+
 
     <div className='userhelp_sharedetail'>
       <button className = "modify_sharing">수정하기</button>
@@ -26,11 +28,11 @@ function DetailSharing() {
     <div id = "nowTime">
     {/*{nowTime}*/ }
     </div>
-
-    <div className = "profile">
-      <img className = "profileImg"  src='assets/img/default_profile.png'>
-      </img>
+    
+    <div className = "profile_sharing">
+      <img className = "profileImg"  src='assets/img/default_profile.png'/>
     </div>
+
 
     <div className='component_sharing'>
       <div className='sharedetailImg'></div>
