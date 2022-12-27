@@ -4,19 +4,24 @@
   background-color: var(--sub_orange);
 }
 
-.main_container {
+.home_container {
+  padding-top: 2.875rem;
   display: grid;
+  justify-content: center;
   grid-template-columns: repeat(3, 16.875rem);
   grid-template-rows: repeat(2, 16.875);
   column-gap: 1.6875rem;
   row-gap: 1.4375rem;
+  background-color: var(--background);
 }
 
 .pictureArea {
   grid-column: 1 / 4;
 }
 
-.main_sharingBtn, .main_groupBuyingBtn, .main_dutchPayBtn {
+.home_sharingBtn,
+.home_groupBuyingBtn,
+.home_dutchPayBtn {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -28,18 +33,18 @@
   border: 0rem;
 }
 
-.main_link {
+.home_link {
   text-decoration: none;
 }
 
-.main_pagemoving_head {
+.home_pagemoving_head {
   text-align: center;
   font-size: 1.375rem;
   font-weight: 800;
   margin-bottom: 1.125rem;
 }
 
-.main_pagemoving_body {
+.home_pagemoving_body {
   text-align: center;
   font-size: 0.75rem;
   font-weight: 700;
@@ -60,4 +65,3 @@
   width: 7.25rem;
   height: 7.688rem;
 }
-
