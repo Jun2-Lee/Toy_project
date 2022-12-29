@@ -10,7 +10,6 @@
   row-gap: 1.25rem;
   align-content: center;
   justify-content: center;
-  padding-top: 2.25rem;
 }
 
 .myWriting_list .item {
@@ -24,10 +23,13 @@
   column-gap: 0.415rem;
   padding: 0.938rem;
   font-size: 0.688rem;
-  box-shadow: 0 0.125rem 0.188rem 0 rgba(0, 0, 0, 0.25)
+  box-shadow: 0 0.125rem 0.188rem 0 rgba(0, 0, 0, 0.25);
 }
 
-.myWriting_list .item_image, .myWriting_list .item_title, .myWriting_list .item_area, .myWriting_list .item_deadline {
+.myWriting_list .item_image,
+.myWriting_list .item_title,
+.myWriting_list .item_area,
+.myWriting_list .item_deadline {
   background-color: white;
   border-radius: 0.346rem;
   text-align: center;
@@ -36,7 +38,8 @@
   justify-content: center;
 }
 
-.myWriting_list .item_image, .myWriting_list .item_title {
+.myWriting_list .item_image,
+.myWriting_list .item_title {
   grid-column: 1 / 3;
 }
 
@@ -49,4 +52,4 @@
   display: grid;
   text-align: center;
   align-content: center;
-} 
+}
