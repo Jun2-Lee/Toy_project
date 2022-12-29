@@ -2,16 +2,16 @@
 import './detail_sharing.css';
 
 import React  from 'react';
-//import moment from 'moment';
-//import 'moment/locale/ko';
+import moment from 'moment';
+import 'moment/locale/ko';
 
 import { useRef, useEffect } from "react";
 
 
 function DetailSharing() {
-  //const nowTime = moment().format('YYYY-MM-DD');
+    const nowTime = moment().format('YYYY-MM-DD');
   return(
-    <div>
+    <div className='detail_sharing'>
     
 
     <div className='sharingdetail_Title'>
@@ -26,7 +26,7 @@ function DetailSharing() {
 
 
     <div id = "nowTime">
-    {/*{nowTime}*/ }
+       {nowTime}
     </div>
     
     <div className = "profile_sharing">

@@ -1,3 +1,9 @@
+.detail_sharing{
+  margin-left: 150px;
+}
+
+
+
 .sharingdetail_Title {
   background-color: var(--sub_orange);
   font-size: 16px;
@@ -5,7 +11,7 @@
   height: 42px;
   width: 833px;
   border-radius: 5px;
-  margin-top: 16px;
+  margin-top: 30px;
 }
 
 #sharingdetail_title{
