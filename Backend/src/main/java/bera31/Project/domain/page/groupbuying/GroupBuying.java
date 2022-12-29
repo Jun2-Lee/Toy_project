@@ -30,6 +30,9 @@ public class GroupBuying extends Contents {
     List<GroupBuyingIntersection> memberList = new ArrayList<>();
     boolean isFinish;
 
+    public void setImage(String image){
+        this.image = image;
+    }
     public Long update(GroupBuyingRequestDto groupBuyingRequestDto) {
         this.cost = groupBuyingRequestDto.getPrice();
         this.limitMember = groupBuyingRequestDto.getMemberLimit();
@@ -37,7 +40,6 @@ public class GroupBuying extends Contents {
         this.product = groupBuyingRequestDto.getProduct();
         this.deadLine = groupBuyingRequestDto.getDeadLine();
         this.link = groupBuyingRequestDto.getLink();
-        this.image = groupBuyingRequestDto.getImage();
         this.title = groupBuyingRequestDto.getTitle();
         return this.getId();
     }
@@ -52,7 +54,6 @@ public class GroupBuying extends Contents {
         this.deadLine = groupBuyingRequestDto.getDeadLine();
         this.postTime = LocalDateTime.now();
         this.link = groupBuyingRequestDto.getLink();
-        this.image = groupBuyingRequestDto.getImage();
         this.title = groupBuyingRequestDto.getTitle();
     }
 }
