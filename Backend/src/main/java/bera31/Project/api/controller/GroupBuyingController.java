@@ -5,16 +5,21 @@ import bera31.Project.domain.dto.responsedto.GroupBuyingListResponseDto;
 import bera31.Project.domain.dto.responsedto.GroupBuyingResponseDto;
 import bera31.Project.service.page.GroupBuyingService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.awt.*;
+import java.io.IOException;
 import java.util.List;
 
+@Slf4j
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/groupBuying")
 public class GroupBuyingController {
-
     private final GroupBuyingService groupBuyingService;
 
     @GetMapping
@@ -22,9 +27,10 @@ public class GroupBuyingController {
         return groupBuyingService.findAllGroupBuying();
     }
 
-    @PostMapping
-    public Long postGroupBuying(@RequestBody GroupBuyingRequestDto groupBuyingRequestDto) {
-        return groupBuyingService.postGroupBuying(groupBuyingRequestDto);
+    @PostMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    public Long postGroupBuying(@RequestPart GroupBuyingRequestDto groupBuyingRequestDto,
+                                @RequestPart MultipartFile postImage) throws IOException {
+        return groupBuyingService.postGroupBuying(groupBuyingRequestDto, postImage);
     }
 
     @PostMapping("/update/{postId}")

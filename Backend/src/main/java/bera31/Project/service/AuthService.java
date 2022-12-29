@@ -12,11 +12,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 @Transactional(readOnly = true)
 @RequiredArgsConstructor
 public class AuthService {
-
     private final MemberRepository memberRepository;
 
     @Transactional
-    public void signUp(@RequestBody SignUpDto signUpDto) throws Exception {
+    public Long signUp(SignUpDto signUpDto) throws Exception {
 
         if (memberRepository.findByEmail(signUpDto.getEmail()).isPresent()) {
             throw new Exception("이미 있는 회원입니다");
@@ -27,7 +26,7 @@ public class AuthService {
         }
 
         //memberRepository.save(member);
-        return;
+        return 0L;
     }
 
 
