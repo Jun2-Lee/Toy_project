@@ -6,7 +6,7 @@ spring:
   datasource:
     url: jdbc:mariadb://naong-db.c8o7rl2nwppm.ap-northeast-2.rds.amazonaws.com:3306/naongdb
     username: admin
-    password: ####
+    password: criteria123!
     driver-class-name: org.mariadb.jdbc.Driver
   mvc:
     pathmatch:
@@ -22,8 +22,8 @@ spring:
 cloud:
   aws:
     credentials:
-      access-key: ####
-      secret-key: ####
+      access-key: AKIAVPJIFAHMFSF3WJOQ
+      secret-key: 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
     s3:
       bucket: naongbucket
     region:
