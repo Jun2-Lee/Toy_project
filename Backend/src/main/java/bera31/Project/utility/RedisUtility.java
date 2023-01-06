@@ -1,15 +1,15 @@
-package bera31.Project.repository;
+package bera31.Project.utility;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.data.redis.core.ValueOperations;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import java.time.Duration;
 
-@Repository
+@Component
 @RequiredArgsConstructor
-public class RedisRepository {
+public class RedisUtility {
     private final RedisTemplate<String, String> redisTemplate;
 
     public void setValues(String key, String value){
