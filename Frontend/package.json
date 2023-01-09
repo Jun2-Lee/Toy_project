@@ -6,7 +6,10 @@
     "axios": "^1.2.1",
     "bootstrap": "^5.2.2",
     "cra-template": "1.2.0",
+<<<<<<< HEAD
     "http-proxy-middleware": "^2.0.6",
+=======
+>>>>>>> 1249893d8375c9811c8e139ace37936c6b6e025f
     "moment": "^2.29.4",
     "react": "^18.2.0",
     "react-bootstrap": "^2.5.0",
