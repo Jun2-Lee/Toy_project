@@ -1,22 +1,30 @@
 package bera31.Project.service.page;
 
 
+import bera31.Project.config.S3.S3Uploader;
 import bera31.Project.domain.dto.requestdto.GroupBuyingRequestDto;
 import bera31.Project.domain.dto.responsedto.GroupBuyingListResponseDto;
 import bera31.Project.domain.dto.responsedto.GroupBuyingResponseDto;
 import bera31.Project.domain.page.groupbuying.GroupBuying;
 import bera31.Project.repository.page.GroupBuyingRepository;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
+@Slf4j
 @Transactional
 @RequiredArgsConstructor
 public class GroupBuyingService {
+    @Autowired
+    private S3Uploader s3Uploader; // Field Injection 말고 다른 방법 생각해보기
     private final GroupBuyingRepository groupBuyingRepository;
 
     public List<GroupBuyingListResponseDto> searchGroupBuying(String keyword) {
@@ -33,9 +41,11 @@ public class GroupBuyingService {
                 .collect(Collectors.toList());
     }
 
-    public Long postGroupBuying(GroupBuyingRequestDto groupBuyingRequestDto) {
-        GroupBuying savedGroupBuying = groupBuyingRepository.save(new GroupBuying(groupBuyingRequestDto));
-        return savedGroupBuying.getId();
+    public Long postGroupBuying(GroupBuyingRequestDto groupBuyingRequestDto, MultipartFile postImage) throws IOException {
+        GroupBuying newGroupBuying = new GroupBuying(groupBuyingRequestDto);
+        newGroupBuying.setImage(s3Uploader.upload(postImage, "groupBuying"));
+
+        return groupBuyingRepository.save(newGroupBuying);
     }
 
     public Long updateGroupBuying(GroupBuyingRequestDto groupBuyingRequestDto, Long postId) {

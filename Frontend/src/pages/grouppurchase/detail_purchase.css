@@ -1,3 +1,11 @@
+.detail_purchase{
+  margin-left: 150px;
+
+}
+
+#nowTime{
+  margin-left: 730px;
+}
 
 .detail_Title {
   background-color: var(--sub_orange);
@@ -6,7 +14,7 @@
   height: 42px;
   width: 833px;
   border-radius: 5px;
-  margin-top: -25px;
+  margin-top: 30px;
 }
 
 #detail_title{
@@ -38,8 +46,8 @@
     background-color: white;
     width: 312px;
     height: 312px;
-    margin-left: 120px
-
+    margin-left: 120px;
+  
 
   }
 
@@ -98,6 +106,10 @@
     display: flex;
 
   }
+
+
+
+
   #won {
     font-size: 16px;
     font-weight:bolder;
@@ -147,3 +159,49 @@
     height: 50px;
     border-radius: 5px;
   }
+
+
+  .purchase_comment{
+    width: 833px;
+    height: 534px;
+    background-color: var(--sub_orange);
+    margin-top: 20px;
+    border-radius: 5px;
+    margin-right: 400px;
+    display: flex;
+    
+  }
+
+  .inputcomment{
+    justify-content: center;
+
+  }
+
+
+.inputComment{
+    width: 795px;
+    height: 102px;
+    border-radius: 5px;
+    justify-content:center;
+    margin-top:420px;
+    border:0;
+    outline:0;
+    margin-left: 20px;
+    border-top: 100px;
+
+}
+
+.submitComment{
+    width: 63px;
+    height: 33px;
+    margin-right: 10px;
+    border-radius: 5px;
+    background-color: #FF8327;
+    border:0;
+    outline:0; 
+    font-size: 16px;
+    font-weight:bolder;
+    color: white;
+    margin-top: 450px;
+    margin-right: 50px;
+}
