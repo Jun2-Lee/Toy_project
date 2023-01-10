@@ -1,6 +1,7 @@
 package bera31.Project.domain.page.groupbuying;
 
 import bera31.Project.domain.dto.requestdto.GroupBuyingRequestDto;
+import bera31.Project.domain.member.Member;
 import bera31.Project.domain.page.Contents;
 import bera31.Project.domain.page.intersection.GroupBuyingIntersection;
 import lombok.AllArgsConstructor;
@@ -18,7 +19,7 @@ import java.util.List;
 @Getter
 public class GroupBuying extends Contents {
     String link;
-    String category; //////////
+    String category;
     String product;
     LocalDateTime deadLine;
     String content;
@@ -44,7 +45,8 @@ public class GroupBuying extends Contents {
         return this.getId();
     }
 
-    public GroupBuying(GroupBuyingRequestDto groupBuyingRequestDto) {
+    public GroupBuying(GroupBuyingRequestDto groupBuyingRequestDto, Member member) {
+        this.user = member;
         this.cost = groupBuyingRequestDto.getPrice();
         this.limitMember = groupBuyingRequestDto.getMemberLimit();
         this.content = groupBuyingRequestDto.getContent();
