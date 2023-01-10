@@ -2,7 +2,6 @@ import './detail_purchase.css';
 import moment from 'moment';
 import 'moment/locale/ko';
 import React  from 'react';
-import Comment from "../../components/comment";
 import {useState} from 'react';
 
 function DetailPurchase() {

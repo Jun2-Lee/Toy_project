@@ -19,11 +19,12 @@ import PostDelivery from "./pages/post/post_delivery";
 import PostgroupBuying from "./pages/post/post_groupBuying";
 import EditProfile from "./pages/profile/profile_edit";
 import MyWriting from "./pages/myWriting";
+import MyPage from "./pages/mypage";
 import Layout from "./components/Layout";
-const SERVER_URL = 'http://3.36.144.128:8080/naong-api';
+
 function App() {
 
-  const fetchData = async () =>{
+  /*const fetchData = async () =>{
     const response = await axios.get('http://3.36.144.128:8080/naong-api');
   };
 
@@ -37,7 +38,7 @@ function App() {
     const done = e.target.done.checked;
     await axios.post(SERVER_URL,{text, done});
     fetchData();
-  };
+  };*/
 
   return (
     <Router>
@@ -57,10 +58,11 @@ function App() {
           <Route path="/postGroupBuying" element={<PostgroupBuying />} />
           <Route path="/editProfile" element={<EditProfile />} />
           <Route path="/myWriting" element={<MyWriting />} />
+          <Route path="/myPage" element={<MyPage />} />
         </Route>
       </Routes>
     </Router>
   );
-}
+};
 
 export default App;
