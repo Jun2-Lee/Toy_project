@@ -1,9 +1,11 @@
 package bera31.Project.service;
 
+import antlr.Token;
 import bera31.Project.config.S3.S3Uploader;
 import bera31.Project.config.jwt.JwtTokenProvider;
 import bera31.Project.domain.dto.requestdto.LogInDto;
 import bera31.Project.domain.dto.requestdto.SignUpDto;
+import bera31.Project.domain.dto.requestdto.TokenRequestDto;
 import bera31.Project.domain.dto.responsedto.AuthTokenDto;
 import bera31.Project.domain.member.Member;
 import bera31.Project.repository.MemberRepository;
@@ -42,7 +44,7 @@ public class AuthService {
         }
 
         Member member = new Member(signUpDto.getEmail(), passwordEncoder.encode(signUpDto.getPassword()),
-                signUpDto.getNickname(), signUpDto.getAddress());
+                signUpDto.getNickname(), signUpDto.getDong(), signUpDto.getGu());
         member.changeImage(s3Uploader.upload(profileImage, "profileImage"));
         return memberRepository.save(member).getId();
     }
@@ -65,5 +67,16 @@ public class AuthService {
         log.info(SecurityUtility.getCurrentMemberEmail());
         redisUtility.deleteValues(SecurityUtility.getCurrentMemberEmail());
         return "Logged out!";
+    }
+
+    public AuthTokenDto reissue(TokenRequestDto tokenRequestDto){
+        String currentMemberEmail = SecurityUtility.getCurrentMemberEmail();
+        if(redisUtility.getValues(currentMemberEmail).isEmpty())
+            throw new IllegalArgumentException("Refresh Token이 존재하지 않습니다!");
+
+        Authentication authentication = tokenProvider.getAuthentication(tokenRequestDto.getAccessToken());
+        AuthTokenDto authTokenDto = tokenProvider.generateToken(authentication);
+        redisUtility.setValues(currentMemberEmail, authTokenDto.getRefreshToken());
+        return authTokenDto;
     }
 }

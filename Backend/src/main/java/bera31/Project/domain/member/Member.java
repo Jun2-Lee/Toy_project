@@ -31,8 +31,8 @@ public class Member {
     private String profileImage;
     @Enumerated(EnumType.STRING)
     private Authority authority;
-    @Embedded
-    private Address address;
+    private String dong;
+    private String gu;
     private double manner;
 
     @OneToMany(mappedBy = "user")
@@ -67,19 +67,21 @@ public class Member {
     @OneToMany
     @JoinColumn(name = "MEMBER_ID")
     private List<Schedule> memoList = new ArrayList<>();
-    public Member(String email, String password, String nickname, Address address){
+    public Member(String email, String password, String nickname, String dong, String gu){
         this.email = email;
         this.password = password;
         this.nickname = nickname;
-        this.address = address;
+        this.dong = dong;
+        this.gu = gu;
         this.authority = Authority.ROLE_USER;
     }
     public void changePassword(String password) {
         this.password = password;
     }
 
-    public void changeAddress(Address address) {
-        this.address = address;
+    public void changeAddress(String dong, String gu) {
+        this.dong = dong;
+        this.gu = gu;
     }
 
     public void changeImage(String image) {
