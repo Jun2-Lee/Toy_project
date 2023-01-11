@@ -5,8 +5,11 @@ import bera31.Project.config.S3.S3Uploader;
 import bera31.Project.domain.dto.requestdto.GroupBuyingRequestDto;
 import bera31.Project.domain.dto.responsedto.GroupBuyingListResponseDto;
 import bera31.Project.domain.dto.responsedto.GroupBuyingResponseDto;
+import bera31.Project.domain.member.Member;
 import bera31.Project.domain.page.groupbuying.GroupBuying;
+import bera31.Project.repository.MemberRepository;
 import bera31.Project.repository.page.GroupBuyingRepository;
+import bera31.Project.utility.SecurityUtility;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +19,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -26,6 +30,7 @@ public class GroupBuyingService {
     @Autowired
     private S3Uploader s3Uploader; // Field Injection 말고 다른 방법 생각해보기
     private final GroupBuyingRepository groupBuyingRepository;
+    private final MemberRepository memberRepository;
 
     public List<GroupBuyingListResponseDto> searchGroupBuying(String keyword) {
         return groupBuyingRepository.findByKeyword(keyword)
@@ -42,7 +47,9 @@ public class GroupBuyingService {
     }
 
     public Long postGroupBuying(GroupBuyingRequestDto groupBuyingRequestDto, MultipartFile postImage) throws IOException {
-        GroupBuying newGroupBuying = new GroupBuying(groupBuyingRequestDto);
+        String currentMemberEmail = SecurityUtility.getCurrentMemberEmail();
+        Optional<Member> findedMember = memberRepository.findByEmail(currentMemberEmail);
+        GroupBuying newGroupBuying = new GroupBuying(groupBuyingRequestDto, findedMember.get());
         newGroupBuying.setImage(s3Uploader.upload(postImage, "groupBuying"));
 
         return groupBuyingRepository.save(newGroupBuying);
