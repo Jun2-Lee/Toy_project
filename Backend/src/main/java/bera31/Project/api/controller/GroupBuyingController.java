@@ -4,9 +4,12 @@ import bera31.Project.domain.dto.requestdto.GroupBuyingRequestDto;
 import bera31.Project.domain.dto.responsedto.GroupBuyingListResponseDto;
 import bera31.Project.domain.dto.responsedto.GroupBuyingResponseDto;
 import bera31.Project.service.page.GroupBuyingService;
+import com.amazonaws.Response;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -23,29 +26,29 @@ public class GroupBuyingController {
     private final GroupBuyingService groupBuyingService;
 
     @GetMapping
-    public List<GroupBuyingListResponseDto> findAllGroupBuying() {
-        return groupBuyingService.findAllGroupBuying();
+    public ResponseEntity<List<GroupBuyingListResponseDto>> findAllGroupBuying() {
+        return new ResponseEntity<>(groupBuyingService.findAllGroupBuying(), HttpStatus.OK);
     }
 
     @PostMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    public Long postGroupBuying(@RequestPart GroupBuyingRequestDto groupBuyingRequestDto,
+    public ResponseEntity<Long> postGroupBuying(@RequestPart GroupBuyingRequestDto groupBuyingRequestDto,
                                 @RequestPart MultipartFile postImage) throws IOException {
-        return groupBuyingService.postGroupBuying(groupBuyingRequestDto, postImage);
+        return new ResponseEntity<>(groupBuyingService.postGroupBuying(groupBuyingRequestDto, postImage), HttpStatus.OK);
     }
 
     @PostMapping("/update/{postId}")
-    public Long updateGroupBuying(@RequestBody GroupBuyingRequestDto groupBuyingRequestDto, @PathVariable Long postId) {
-        return groupBuyingService.updateGroupBuying(groupBuyingRequestDto, postId);
+    public ResponseEntity<Long> updateGroupBuying(@RequestBody GroupBuyingRequestDto groupBuyingRequestDto, @PathVariable Long postId) {
+        return new ResponseEntity<>(groupBuyingService.updateGroupBuying(groupBuyingRequestDto, postId), HttpStatus.OK);
     }
 
     @GetMapping("/{postId}")
-    public GroupBuyingResponseDto findGroupBuying(@PathVariable Long postId) {
-        return groupBuyingService.findGroupBuying(postId);
+    public ResponseEntity<GroupBuyingResponseDto> findGroupBuying(@PathVariable Long postId) {
+        return new ResponseEntity<>(groupBuyingService.findGroupBuying(postId), HttpStatus.OK);
     }
 
     @GetMapping("/search")
-    public List<GroupBuyingListResponseDto> searchGroupBuying(@RequestParam String keyword) {
-        return groupBuyingService.searchGroupBuying(keyword);
+    public ResponseEntity<List<GroupBuyingListResponseDto>> searchGroupBuying(@RequestParam String keyword) {
+        return new ResponseEntity<>(groupBuyingService.searchGroupBuying(keyword), HttpStatus.OK);
     }
 
     @PostMapping("/{postId}/heart")
